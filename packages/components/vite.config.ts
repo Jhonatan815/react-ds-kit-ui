@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: './src/index.ts',
-      name: '@ds/components',
+      name: '@react-web-kit/components',
       fileName: 'index',
       formats: ['es', 'cjs'],
     },
