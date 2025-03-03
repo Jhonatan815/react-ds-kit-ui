@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@ds/tokens": ["packages/tokens/src/index.ts"],
+      "@ds/components": ["packages/components/src"]
+    }
+  }
+}

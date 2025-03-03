@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "paths": {
+      "@ds/tokens": ["../tokens/dist/index.d.ts"]
+    }
+  },
+  "include": ["src/**/*"]
+}

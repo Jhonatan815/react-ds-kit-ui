@@ -1,0 +1,48 @@
+{
+  "name": "react-ds-kit-ui",
+  "version": "1.0.0",
+  "description": "React Design Systems Components",
+  "main": "index.js",
+  "auhors": "Jhonatan Benavides",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "turbo run build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "packageManager": "pnpm@8.10.3",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.5",
+    "@storybook/addon-actions": "^8.6.3",
+    "@storybook/addon-essentials": "^8.6.3",
+    "@storybook/addon-links": "^8.6.3",
+    "@storybook/addon-onboarding": "^8.6.3",
+    "@storybook/blocks": "^8.6.3",
+    "@storybook/experimental-addon-test": "^8.6.3",
+    "@storybook/react": "^8.6.3",
+    "@storybook/react-vite": "^8.6.3",
+    "@storybook/test": "^8.6.3",
+    "@types/node": "^22.13.8",
+    "@vitest/browser": "^3.0.7",
+    "@vitest/coverage-v8": "^3.0.7",
+    "playwright": "^1.50.1",
+    "storybook": "^8.6.3",
+    "turbo": "^2.4.4",
+    "vitest": "^3.0.7"
+  },
+  "dependencies": {
+    "@ds/components": "^0.1.0",
+    "@types/styled-components": "^5.1.34",
+    "@vitejs/plugin-react": "^4.3.4",
+    "styled-components": "^6.1.15",
+    "vite": "^6.2.0",
+    "vite-plugin-dts": "^4.5.1"
+  }
+}
