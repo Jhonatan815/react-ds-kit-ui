@@ -1,6 +1,6 @@
 {
   "name": "@react-web-kit/components",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Un paquete de componentes UI",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
