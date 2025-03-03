@@ -10,8 +10,11 @@
     "outDir": "./dist",
     "stripInternal": true,
     "strict": true,
+    "baseUrl": ".",
+    "moduleResolution": "nodenext",
+    "module": "NodeNext",
     "paths": {
-      "@react-web-kit/tokens": ["../tokens/dist/index.d.ts"]
+      "@react-web-kit/*": ["src/*"]
     }
   },
   "include": ["src/**/*"],

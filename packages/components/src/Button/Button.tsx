@@ -6,10 +6,7 @@ type ButtonProps = {
   disabled?: boolean
 }
 
-const Button = ({
-  children,
-  disabled = false,
-}: ButtonProps): React.ReactElement => {
+const Button: React.FC<ButtonProps> = ({ children, disabled }) => {
   return <Sc.StyledButton disabled={disabled}>{children}</Sc.StyledButton>
 }
 
