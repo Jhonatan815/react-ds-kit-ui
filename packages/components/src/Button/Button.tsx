@@ -4,19 +4,12 @@ import * as React from 'react'
 type ButtonProps = {
   children: React.ReactNode
   disabled?: boolean
-  variant?: 'primary' | 'secondary' | 'tertiary'
 }
 
-function Button({
+const Button = ({
   children,
   disabled = false,
-  variant = 'primary',
-}: ButtonProps): React.ReactElement {
-  if (variant === 'secondary' || variant === 'tertiary') {
-    return (
-      <Sc.SecondaryButton disabled={disabled}>{children}</Sc.SecondaryButton>
-    )
-  }
+}: ButtonProps): React.ReactElement => {
   return <Sc.StyledButton disabled={disabled}>{children}</Sc.StyledButton>
 }
 
