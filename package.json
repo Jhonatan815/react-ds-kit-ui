@@ -9,7 +9,7 @@
     "build": "turbo run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "publish:components": "cd packages/components && npm publish --access public",
+    "publish:components": "cd packages/components && rm -rf dist && pnpm build && npm publish --access public",
     "publish:tokens": "cd packages/tokens && npm publish --access public"
   },
   "keywords": [],
