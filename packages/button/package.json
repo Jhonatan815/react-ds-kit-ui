@@ -1,6 +1,6 @@
 {
   "name": "@react-web-kit/button",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "UI component",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
