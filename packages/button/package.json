@@ -1,6 +1,6 @@
 {
   "name": "@react-web-kit/button",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "UI component",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -16,9 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
-    "build:turbo": "turbo run build",
-    "publish:component": "npm version patch && pnpm build:turbo && npm publish --access public"
+    "build": "vite build"
   },
   "dependencies": {
     "@react-web-kit/tokens": "^1.0.0"
