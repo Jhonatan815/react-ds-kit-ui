@@ -16,7 +16,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "build:turbo": "turbo run build",
+    "publish": "npm version patch && pnpm build:turbo && npm publish --access public"
   },
   "dependencies": {
     "@react-web-kit/tokens": "^1.0.0"
