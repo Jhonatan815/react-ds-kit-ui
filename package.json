@@ -10,7 +10,9 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "publish:components": "cd packages/components && rm -rf dist && pnpm build && npm publish --access public",
-    "publish:tokens": "cd packages/tokens && npm publish --access public"
+    "publish:button": "cd packages/components && rm -rf dist && pnpm build && npm publish --access public",
+    "publish:tokens": "cd packages/tokens && npm publish --access public",
+    "clean:project": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name 'dist' -type d -prune -exec rm -rf '{}' + && rm -rf pnpm-lock.yaml"
   },
   "keywords": [],
   "author": "",
@@ -45,6 +47,6 @@
     "@vitejs/plugin-react": "^4.3.4",
     "styled-components": "^6.1.15",
     "vite": "^6.2.0",
-    "vite-plugin-dts": "^4.5.1"
+    "vite-plugin-dts": "^4.5.3"
   }
 }
