@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@react-web-kit/components':
-        specifier: ^1.0.0
-        version: link:packages/components
       '@types/styled-components':
         specifier: ^5.1.34
         version: 5.1.34
@@ -80,34 +77,6 @@ importers:
         version: 3.0.7(@types/node@22.13.9)(@vitest/browser@3.0.7)
 
   packages/button:
-    dependencies:
-      '@react-web-kit/tokens':
-        specifier: ^1.0.0
-        version: link:../tokens
-      react:
-        specifier: ^19.0.0
-        version: 19.0.0
-      react-dom:
-        specifier: ^19.0.0
-        version: 19.0.0(react@19.0.0)
-    devDependencies:
-      '@types/react':
-        specifier: ^19.0.10
-        version: 19.0.10
-      '@types/react-dom':
-        specifier: ^19.0.4
-        version: 19.0.4(@types/react@19.0.10)
-      '@types/styled-components':
-        specifier: ^5.1.34
-        version: 5.1.34
-      styled-components:
-        specifier: ^6.1.15
-        version: 6.1.15(react-dom@19.0.0)(react@19.0.0)
-      vite-plugin-dts:
-        specifier: ^4.5.1
-        version: 4.5.3(@types/node@22.13.9)(typescript@5.8.2)(vite@6.2.0)
-
-  packages/components:
     dependencies:
       '@react-web-kit/tokens':
         specifier: ^1.0.0

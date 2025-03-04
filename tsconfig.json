@@ -3,7 +3,6 @@
     "baseUrl": ".",
     "paths": {
       "@react-web-kit/button": ["packages/button/src"],
-      "@react-web-kit/components": ["packages/components/src"],
       "@react-web-kit/tokens": ["packages/tokens/src/index.ts"]
     }
   }
