@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { tokens } from '@react-web-kit/tokens'
+import { tokens } from "@react-web-kit/tokens"
+import styled from "styled-components"
 
 export const Button = styled.button`
   background-color: ${tokens.colors.primary};

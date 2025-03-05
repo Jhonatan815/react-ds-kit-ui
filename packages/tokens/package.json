@@ -1,11 +1,11 @@
 {
-  "name": "@react-web-kit/tokens",
-  "version": "1.0.0",
-  "description": "Paquete de tokens de diseño",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "vite build"
-  }
+	"name": "@react-web-kit/tokens",
+	"version": "1.0.0",
+	"description": "Paquete de tokens de diseño",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "vite build"
+	}
 }

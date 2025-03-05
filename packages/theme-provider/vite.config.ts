@@ -15,13 +15,13 @@ export default defineConfig({
 	build: {
 		lib: {
 			entry: "./src/index.ts",
-			name: "@react-web-kit/button",
+			name: "@react-web-kit/theme-provider",
 			fileName: "index",
 			formats: ["es", "cjs"],
 		},
 		rollupOptions: {
 			input: "./src/index.ts",
-			external: ["react", "react-dom", "@react-web-kit/tokens"],
+			external: ["react", "react-dom"],
 		},
 	},
 })

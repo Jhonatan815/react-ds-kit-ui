@@ -1,7 +1,7 @@
 {
-	"name": "@react-web-kit/button",
-	"version": "1.0.6",
-	"description": "UI component",
+	"name": "@react-web-kit/theme-provider",
+	"version": "1.0.0",
+	"description": "Paquete para estilos globales",
 	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
@@ -15,10 +15,7 @@
 	"files": ["dist"],
 	"scripts": {
 		"build": "vite build",
-		"build:turbo": "turbo run build --filter=@react-web-kit/button"
-	},
-	"dependencies": {
-		"@react-web-kit/tokens": "^1.0.0"
+		"build:turbo": "turbo run build --filter=@react-web-kit/theme-provider"
 	},
 	"peerDependencies": {
 		"@types/react": "^19.0.0",
