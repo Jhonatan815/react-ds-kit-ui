@@ -1,5 +1,5 @@
-import type * as React from "react"
-import * as Sc from "./Button.style"
+import type * as React from 'react'
+import * as Sc from './Button.style'
 
 type ButtonProps = {
   children: React.ReactNode

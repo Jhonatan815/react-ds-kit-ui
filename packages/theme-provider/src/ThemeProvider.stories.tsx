@@ -1,12 +1,12 @@
-import React from "react"
-import ThemeProvider from "./ThemeProvider"
+import React from 'react'
+import ThemeProvider from './ThemeProvider'
 
 export default {
-  title: "Components/ThemeProvider",
+  title: 'Components/ThemeProvider',
   component: ThemeProvider,
   argTypes: {
     disabled: {
-      control: "boolean",
+      control: 'boolean',
     },
   },
 }
@@ -17,9 +17,9 @@ export const Default = () => {
       resetGlobalStyles
       customTheme={{
         colors: {
-          danger: "blue",
-          primary: "#d5ff60",
-          secondary: "#d5ff60",
+          danger: 'blue',
+          primary: '#d5ff60',
+          secondary: '#d5ff60',
         },
         zindex: 10,
       }}

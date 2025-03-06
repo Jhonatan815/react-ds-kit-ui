@@ -1,7 +1,7 @@
-import type * as React from "react"
-import { type DefaultTheme, ThemeProvider } from "styled-components"
-import GlobalsStyle from "./ThemeProvider.style"
-import { defaultTheme } from "./constants/themes"
+import type * as React from 'react'
+import { type DefaultTheme, ThemeProvider } from 'styled-components'
+import GlobalsStyle from './ThemeProvider.style'
+import { defaultTheme } from './constants/themes'
 
 type ThemeProviderProps = {
   children: React.ReactNode

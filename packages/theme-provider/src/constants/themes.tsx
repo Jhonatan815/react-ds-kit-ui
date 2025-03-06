@@ -1,4 +1,4 @@
-import type { DefaultTheme } from "styled-components"
+import type { DefaultTheme } from 'styled-components'
 
 export interface IColors {
   primary?: string
@@ -14,7 +14,7 @@ export interface ISpacing {
   extraLarge?: string
 }
 
-declare module "styled-components" {
+declare module 'styled-components' {
   export interface DefaultTheme {
     colors: IColors
     spacing: ISpacing
@@ -23,15 +23,15 @@ declare module "styled-components" {
 
 export const defaultTheme: DefaultTheme = {
   colors: {
-    primary: "#007bff",
-    secondary: "#6c757d",
-    success: "#28a745",
-    danger: "#dc3545",
+    primary: '#007bff',
+    secondary: '#6c757d',
+    success: '#28a745',
+    danger: '#dc3545',
   },
   spacing: {
-    small: "4px",
-    medium: "8px",
-    large: "16px",
-    extraLarge: "62px",
+    small: '4px',
+    medium: '8px',
+    large: '16px',
+    extraLarge: '62px',
   },
 }
