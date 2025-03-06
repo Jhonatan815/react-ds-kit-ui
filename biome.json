@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": [".turbo", "node_modules", "dist", ".storybook"]
+    "ignore": [".turbo", "node_modules", "dist", ".storybook", "coverage"]
   },
   "formatter": {
     "enabled": true,
@@ -39,7 +39,8 @@
       "dist",
       "*.stories.tsx",
       ".storybook",
-      "vitest.config.*"
+      "vitest.config.*",
+      "coverage"
     ]
   },
   "javascript": {
