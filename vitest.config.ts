@@ -36,7 +36,7 @@ export default defineConfig({
     ],
     coverage: {
       exclude: ['**/dist/**'],
-      include: ['**/src/**'],
+      include: ['**/src/**.tsx'],
       provider: 'v8',
     },
   },
