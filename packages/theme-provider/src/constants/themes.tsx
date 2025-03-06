@@ -1,37 +1,53 @@
 import type { DefaultTheme } from 'styled-components'
 
 export interface Colors {
-  primary?: string
-  secondary?: string
-  success?: string
-  danger?: string
+  black: string
+  error: string
+  info: string
+  primary: string
+  secondary: string
+  success: string
+  warning: string
+  white: string
 }
 
 export interface Spacing {
-  small?: string
-  medium?: string
-  large?: string
-  extraLarge?: string
+  '2xs': string
+  xs: string
+  s: string
+  m: string
+  l: string
+  xl: string
+  '2xl': string
+  '3xl': string
 }
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    colors: Colors
-    spacing: Spacing
+    colors: Partial<Colors>
+    spacing: Partial<Spacing>
   }
 }
 
 export const defaultTheme: DefaultTheme = {
   colors: {
-    primary: '#007bff',
-    secondary: '#6c757d',
+    black: '#000000',
+    error: '#dc3545',
+    info: '#17a2b8',
+    primary: '#ff9934',
+    secondary: '#007bff',
     success: '#28a745',
-    danger: '#dc3545',
+    warning: '#FFCD4C',
+    white: '#ffffff',
   },
   spacing: {
-    small: '4px',
-    medium: '8px',
-    large: '16px',
-    extraLarge: '62px',
+    '2xs': '0.25rem',
+    xs: '0.5rem',
+    s: '1rem',
+    m: '1.5rem',
+    l: '2rem',
+    xl: '3rem',
+    '2xl': '4rem',
+    '3xl': '5rem',
   },
 }
