@@ -8,7 +8,7 @@ type ThemeProviderProps = {
   customTheme?: Partial<DefaultTheme>
   resetGlobalStyles?: boolean
 }
-// change type any to correct type
+
 interface AnyObject {
   [key: string]: unknown
 }
@@ -25,7 +25,7 @@ const Theme: React.FC<ThemeProviderProps> = ({
         if (obj2[key] instanceof Object && obj1[key] instanceof Object) {
           result[key] = deepMergeWithSpread(
             obj1[key] as AnyObject,
-            obj2[key] as AnyObject,
+            obj2[key] as AnyObject
           )
         } else {
           result[key] = obj2[key]
