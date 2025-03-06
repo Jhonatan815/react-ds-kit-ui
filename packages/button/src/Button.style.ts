@@ -8,3 +8,8 @@ export const Button = styled.button`
   height: 50px;
   width: 250px;
 `
+
+export const Exemple = styled.div`
+height: 20px;
+width: 20px;
+`

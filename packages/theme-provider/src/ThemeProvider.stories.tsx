@@ -14,7 +14,7 @@ export default {
 export const Default = () => {
   return (
     <ThemeProvider
-      resetGlobalStyles
+      resetGlobalStyles={true}
       customTheme={{
         colors: {
           danger: 'blue',

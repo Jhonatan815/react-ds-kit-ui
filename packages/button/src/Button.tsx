@@ -7,7 +7,12 @@ type ButtonProps = {
 }
 
 const Button: React.FC<ButtonProps> = ({ children, disabled = false }) => {
-  return <Sc.Button disabled={disabled}>{children}</Sc.Button>
+  return (
+    <Sc.Button disabled={disabled}>
+      {children}
+      <Sc.Exemple>asdasdasd</Sc.Exemple>
+    </Sc.Button>
+  )
 }
 
 export default Button

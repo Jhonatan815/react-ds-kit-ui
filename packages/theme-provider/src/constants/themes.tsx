@@ -1,13 +1,13 @@
 import type { DefaultTheme } from 'styled-components'
 
-export interface IColors {
+export interface Colors {
   primary?: string
   secondary?: string
   success?: string
   danger?: string
 }
 
-export interface ISpacing {
+export interface Spacing {
   small?: string
   medium?: string
   large?: string
@@ -16,8 +16,8 @@ export interface ISpacing {
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    colors: IColors
-    spacing: ISpacing
+    colors: Colors
+    spacing: Spacing
   }
 }
 
