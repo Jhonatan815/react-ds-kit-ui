@@ -21,7 +21,7 @@ export default defineConfig({
     },
     rollupOptions: {
       input: './src/index.ts',
-      external: ['react', 'react-dom', '@react-web-kit/tokens'],
+      external: ['react', 'react-dom', '@react-web-kit/theme-provider'],
     },
   },
 })

@@ -11,7 +11,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "publish:button": "cd packages/button && rm -rf dist && pnpm build:turbo && npm publish --access public",
-    "publish:tokens": "cd packages/tokens && npm publish --access public",
+    "publish:theme-provider": "cd packages/theme-provider && rm -rf dist && pnpm build:turbo && npm publish --access public",
     "lint": "biome check --fix --unsafe",
     "clean:project": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name 'dist' -type d -prune -exec rm -rf '{}' + && rm -rf pnpm-lock.yaml coverage",
     "prepare": "husky"
@@ -20,7 +20,9 @@
   "author": "Jhonatan Benavides",
   "license": "ISC",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "packageManager": "pnpm@8.10.3",
   "devDependencies": {
     "@babel/preset-react": "^7.26.3",

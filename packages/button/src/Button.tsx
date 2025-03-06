@@ -1,18 +1,13 @@
-import type * as React from 'react'
+import type { FC, ReactNode } from 'react'
 import * as Sc from './Button.style'
 
 type ButtonProps = {
-  children: React.ReactNode
+  children: ReactNode
   disabled?: boolean
 }
 
-const Button: React.FC<ButtonProps> = ({ children, disabled = false }) => {
-  return (
-    <Sc.Button disabled={disabled}>
-      {children}
-      <Sc.Exemple>asdasdasd</Sc.Exemple>
-    </Sc.Button>
-  )
+const Button: FC<ButtonProps> = ({ children, disabled = false }) => {
+  return <Sc.Button disabled={disabled}>{children}</Sc.Button>
 }
 
 export default Button

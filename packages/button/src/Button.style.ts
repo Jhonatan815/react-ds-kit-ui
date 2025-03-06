@@ -1,15 +1,10 @@
-import { tokens } from '@react-web-kit/tokens'
+import { defaultTheme } from '@react-web-kit/theme-provider'
 import styled from 'styled-components'
 
 export const Button = styled.button`
-  background-color: ${tokens.colors.primary};
+  background-color: ${defaultTheme.colors.primary};
   color: white;
-  border: 1px solid ${tokens.colors.primary};
+  border: 1px solid ${defaultTheme.colors.primary};
   height: 50px;
   width: 250px;
-`
-
-export const Exemple = styled.div`
-height: 20px;
-width: 20px;
 `

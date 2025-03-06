@@ -87,9 +87,9 @@ importers:
 
   packages/button:
     dependencies:
-      '@react-web-kit/tokens':
-        specifier: ^1.0.0
-        version: link:../tokens
+      '@react-web-kit/theme-provider':
+        specifier: 1.0.0
+        version: link:../theme-provider
       react:
         specifier: ^19.0.0
         version: 19.0.0
