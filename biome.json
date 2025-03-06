@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": [".turbo", "node_modules", "dist"]
+    "ignore": [".turbo", "node_modules", "dist", ".storybook"]
   },
   "formatter": {
     "enabled": true,
@@ -26,8 +26,21 @@
         "noDefaultExport": "off",
         "useFilenamingConvention": "off",
         "noNamespaceImport": "off"
+      },
+      "nursery": { "all": true, "useImportRestrictions": "off" },
+      "correctness": {
+        "all": true,
+        "useImportExtensions": "off",
+        "noUndeclaredDependencies": "off"
       }
-    }
+    },
+    "ignore": [
+      "node_modules",
+      "dist",
+      "*.stories.tsx",
+      ".storybook",
+      "vitest.config.*"
+    ]
   },
   "javascript": {
     "formatter": {

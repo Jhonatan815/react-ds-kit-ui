@@ -4,7 +4,12 @@ import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      jsxImportSource: 'react',
+      babel: {
+        presets: [['@babel/preset-react', { runtime: 'automatic' }]],
+      },
+    }),
     dts({
       outDir: 'dist',
       insertTypesEntry: true,

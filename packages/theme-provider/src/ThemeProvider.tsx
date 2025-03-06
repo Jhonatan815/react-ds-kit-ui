@@ -18,7 +18,7 @@ const Theme: React.FC<ThemeProviderProps> = ({
   customTheme = defaultTheme,
   resetGlobalStyles = false,
 }) => {
-  const prueba = { b: 1, a: 2 }
+  const _prueba = { b: 1, a: 2 }
   function deepMergeWithSpread(obj1: AnyObject, obj2: AnyObject): AnyObject {
     const result: AnyObject = { ...obj1 }
     for (const key in obj2) {
