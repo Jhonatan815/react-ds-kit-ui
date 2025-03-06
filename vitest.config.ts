@@ -14,6 +14,7 @@ const dirname =
 export default defineConfig({
   test: {
     workspace: [
+      'packages/*',
       {
         extends: true,
         plugins: [
@@ -33,5 +34,10 @@ export default defineConfig({
         },
       },
     ],
+    coverage: {
+      exclude: ['**/dist/**'],
+      include: ['**/src/**'],
+      provider: 'v8',
+    },
   },
 })
