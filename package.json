@@ -20,9 +20,7 @@
   "author": "Jhonatan Benavides",
   "license": "ISC",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["packages/*"],
   "packageManager": "pnpm@8.10.3",
   "devDependencies": {
     "@babel/preset-react": "^7.26.3",

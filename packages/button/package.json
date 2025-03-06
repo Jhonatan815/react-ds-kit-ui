@@ -12,9 +12,7 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "vite build",
     "build:turbo": "turbo run build --filter=@react-web-kit/button"
