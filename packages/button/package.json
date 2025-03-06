@@ -1,38 +1,38 @@
 {
-	"name": "@react-web-kit/button",
-	"version": "1.0.6",
-	"description": "UI component",
-	"main": "dist/index.cjs",
-	"module": "dist/index.mjs",
-	"types": "dist/index.d.ts",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.cjs"
-		}
-	},
-	"files": ["dist"],
-	"scripts": {
-		"build": "vite build",
-		"build:turbo": "turbo run build --filter=@react-web-kit/button"
-	},
-	"dependencies": {
-		"@react-web-kit/tokens": "^1.0.0"
-	},
-	"peerDependencies": {
-		"@types/react": "^19.0.0",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0"
-	},
-	"devDependencies": {
-		"@types/react": "^19.0.10",
-		"@types/react-dom": "^19.0.4",
-		"@types/styled-components": "^5.1.34",
-		"styled-components": "^6.1.15",
-		"vite-plugin-dts": "^4.5.1"
-	},
-	"publishConfig": {
-		"access": "public"
-	}
+  "name": "@react-web-kit/button",
+  "version": "1.0.6",
+  "description": "UI component",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "vite build",
+    "build:turbo": "turbo run build --filter=@react-web-kit/button"
+  },
+  "dependencies": {
+    "@react-web-kit/tokens": "^1.0.0"
+  },
+  "peerDependencies": {
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@types/styled-components": "^5.1.34",
+    "styled-components": "^6.1.15",
+    "vite-plugin-dts": "^4.5.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

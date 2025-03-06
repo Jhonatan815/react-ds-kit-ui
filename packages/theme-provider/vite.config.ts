@@ -3,25 +3,25 @@ import { defineConfig } from "vite"
 import dts from "vite-plugin-dts"
 
 export default defineConfig({
-	plugins: [
-		react(),
-		dts({
-			outDir: "dist",
-			insertTypesEntry: true,
-			cleanVueFileName: true,
-			rollupTypes: true,
-		}),
-	],
-	build: {
-		lib: {
-			entry: "./src/index.ts",
-			name: "@react-web-kit/theme-provider",
-			fileName: "index",
-			formats: ["es", "cjs"],
-		},
-		rollupOptions: {
-			input: "./src/index.ts",
-			external: ["react", "react-dom"],
-		},
-	},
+  plugins: [
+    react(),
+    dts({
+      outDir: "dist",
+      insertTypesEntry: true,
+      cleanVueFileName: true,
+      rollupTypes: true,
+    }),
+  ],
+  build: {
+    lib: {
+      entry: "./src/index.ts",
+      name: "@react-web-kit/theme-provider",
+      fileName: "index",
+      formats: ["es", "cjs"],
+    },
+    rollupOptions: {
+      input: "./src/index.ts",
+      external: ["react", "react-dom"],
+    },
+  },
 })

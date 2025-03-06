@@ -1,18 +1,18 @@
 {
-	"compilerOptions": {
-		"target": "ESNext",
-		"module": "ESNext",
-		"moduleResolution": "node",
-		"declaration": true, // Esto genera los archivos .d.ts
-		"declarationMap": true, // Esto genera los mapas de declaración (opcional)
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"outDir": "dist", // Asegúrate de que los archivos se generen en dist
-		"allowSyntheticDefaultImports": true,
-		"strict": true,
-		"baseUrl": "."
-	},
-	"include": [
-		"src/**/*" // Asegúrate de incluir todos los archivos necesarios
-	]
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "declaration": true, // Esto genera los archivos .d.ts
+    "declarationMap": true, // Esto genera los mapas de declaración (opcional)
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "dist", // Asegúrate de que los archivos se generen en dist
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "baseUrl": "."
+  },
+  "include": [
+    "src/**/*" // Asegúrate de incluir todos los archivos necesarios
+  ]
 }

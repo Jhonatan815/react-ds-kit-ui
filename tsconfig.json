@@ -1,10 +1,10 @@
 {
-	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
-			"@react-web-kit/button": ["packages/button/src"],
-			"@react-web-kit/theme-provider": ["packages/theme-provider/src/index.ts"],
-			"@react-web-kit/tokens": ["packages/tokens/src/index.ts"]
-		}
-	}
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@react-web-kit/button": ["packages/button/src"],
+      "@react-web-kit/theme-provider": ["packages/theme-provider/src/index.ts"],
+      "@react-web-kit/tokens": ["packages/tokens/src/index.ts"]
+    }
+  }
 }
