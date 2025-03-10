@@ -18,7 +18,7 @@
     "build:turbo": "turbo run build --filter=@react-web-kit/button"
   },
   "dependencies": {
-    "@react-web-kit/theme-provider": "1.0.0"
+    "@react-web-kit/theme-provider": "workspace:*"
   },
   "peerDependencies": {
     "@types/react": "^19.0.0",

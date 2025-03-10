@@ -24,8 +24,8 @@ export interface Spacing {
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    colors: Partial<Colors>
-    spacing: Partial<Spacing>
+    colors: Colors
+    spacing: Spacing
   }
 }
 
@@ -50,4 +50,12 @@ export const defaultTheme: DefaultTheme = {
     '2xl': '4rem',
     '3xl': '5rem',
   },
+}
+
+export type PartialColors = Partial<Colors>
+export type PartialSpacing = Partial<Spacing>
+
+export interface PartialDefaultTheme {
+  colors?: PartialColors
+  spacing?: PartialSpacing
 }

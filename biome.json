@@ -32,7 +32,14 @@
         "all": true,
         "useImportExtensions": "off",
         "noUndeclaredDependencies": "off"
-      }
+      },
+      "a11y": {
+        "all": true
+      },
+      "suspicious": { "all": true },
+      "complexity": { "all": true },
+      "security": { "all": true },
+      "performance": { "all": true, "noBarrelFile": "off" }
     },
     "ignore": [
       "node_modules",

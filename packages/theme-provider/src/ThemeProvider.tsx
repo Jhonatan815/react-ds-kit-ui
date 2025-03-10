@@ -2,15 +2,17 @@ import type * as React from 'react'
 import { type DefaultTheme, ThemeProvider } from 'styled-components'
 import GlobalsStyle from './ThemeProvider.style'
 import { defaultTheme } from './constants/themes'
+import type { PartialDefaultTheme } from './constants/themes'
 
 type ThemeProviderProps = {
   children: React.ReactNode
-  customTheme?: Partial<DefaultTheme>
+  customTheme?: PartialDefaultTheme
   resetGlobalStyles?: boolean
 }
 
 interface AnyObject {
-  [key: string]: unknown
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  [key: string]: any
 }
 
 const Theme: React.FC<ThemeProviderProps> = ({

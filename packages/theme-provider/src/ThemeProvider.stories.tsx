@@ -13,23 +13,23 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 const Container = styled.div`
-align-items: center;
-background-color: beige;
-display: flex;
-flex-direction: column;
-gap: ${({ theme }) => theme.spacing.s};
-margin: 0 auto;
-padding: ${({ theme }) => theme.spacing.s};
-width: 50%;
+  align-items: center;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing.s};
+  margin: 0 auto;
+  padding: ${({ theme }) => theme.spacing.s};
+  width: 50%;
 `
 
 const Title = styled.h1`
-color: ${({ theme }) => theme.colors.primary};
-font-size:${({ theme }) => theme.spacing['2xl']};
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: ${({ theme }) => theme.spacing['2xl']};
 `
 const Paragraph = styled.p`
-color: ${({ theme }) => theme.colors.secondary};
-font-size:${({ theme }) => theme.spacing.m};
+  color: ${({ theme }) => theme.colors.secondary};
+  font-size: ${({ theme }) => theme.spacing.m};
 `
 
 const Children = () => (
@@ -61,6 +61,6 @@ export const CustomTheme: Story = {
   args: {
     children: <Children />,
     resetGlobalStyles: true,
-    customTheme: { colors: { primary: '#eb17e1' } },
+    customTheme: { colors: { primary: '#eb17e1' }, spacing: { m: '3rem' } },
   },
 }
