@@ -15,15 +15,26 @@ const config: StorybookConfig = {
     '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
     '../packages/**/src/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
+
   addons: [
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-onboarding'),
     getAbsolutePath('@chromatic-com/storybook'),
-    getAbsolutePath('@storybook/experimental-addon-test'),
+    getAbsolutePath("@storybook/addon-coverage"),
+    getAbsolutePath("@storybook/experimental-addon-test")
   ],
+
   framework: {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
+
+  docs: {
+    autodocs: true
+  },
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript'
+  }
 }
 export default config
