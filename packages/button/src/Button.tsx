@@ -46,18 +46,23 @@ const Button: FC<ButtonProps> = ({
 
   const renderLoading = (): ReactNode => (
     <>
-      <Sc.DotLoading $isContained={variant === 'contained'} />
-      <Sc.DotLoading $isContained={variant === 'contained'} />
-      <Sc.DotLoading $isContained={variant === 'contained'} />
+      <Sc.DotLoading
+        $isContained={variant === 'contained'}
+        role="presentation"
+      />
+      <Sc.DotLoading
+        $isContained={variant === 'contained'}
+        role="presentation"
+      />
+      <Sc.DotLoading
+        $isContained={variant === 'contained'}
+        role="presentation"
+      />
     </>
   )
 
   if (skeleton) {
-    return (
-      <Sc.SkeletonButton $size={size} $loading={loading}>
-        <span>{children}</span>
-      </Sc.SkeletonButton>
-    )
+    return <Sc.SkeletonButton $size={size} $loading={loading} />
   }
 
   if (variant === 'contained') {

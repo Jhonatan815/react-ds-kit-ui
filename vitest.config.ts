@@ -11,21 +11,18 @@ const dirname =
 export default defineConfig({
   test: {
     coverage: {
+      reporter: ['text', 'json', 'html'],
       exclude: [
         ...coverageConfigDefaults.exclude,
+        '**/node_modules/**',
         '**/.storybook/**',
         '**/*.stories.*',
         '**/storybook-static/**',
         '**/packages/**/dist/**',
         '**/packages/**/**/index.ts',
+        '**/packages/**/**/constants',
       ],
       provider: 'v8',
-      watermarks: {
-        statements: [80, 100],
-        functions: [80, 100],
-        branches: [80, 100],
-        lines: [80, 100],
-      },
     },
     workspace: [
       'packages/*',

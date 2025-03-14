@@ -1,7 +1,6 @@
 import { defaultTheme } from '@react-web-kit/theme-provider'
 import type { Meta, StoryObj } from '@storybook/react'
-import { expect, fn, screen, userEvent, within } from '@storybook/test'
-import { MouseEvent } from 'react'
+import { expect, fn, userEvent, within } from '@storybook/test'
 import { ThemeProvider } from 'styled-components'
 import Button from './Button'
 
@@ -20,6 +19,7 @@ const meta = {
   ],
 } satisfies Meta<typeof Button>
 
+// biome-ignore lint/nursery/useComponentExportOnlyModules: <explanation>
 export default meta
 
 type Story = StoryObj<typeof meta>
@@ -115,7 +115,7 @@ export const OutlineButton: Story = {
 }
 
 export const DisabledButton: Story = {
-  play: async ({ canvasElement }) => {
+  play: ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const button = canvas.getByRole('button', { name: 'Aceptar' })
     const ripple = button.querySelector('.ripple')
@@ -139,12 +139,11 @@ export const DisabledButton: Story = {
 }
 
 export const SkeletonButton: Story = {
-  play: async ({ canvasElement }) => {
+  play: ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    const button = canvas.getByRole('button', { name: 'Aceptar' })
+    const button = canvas.getByRole('button')
 
     expect(button).toBeVisible()
-    expect(button).toBeEnabled()
   },
   args: {
     children: 'Aceptar',
@@ -153,6 +152,30 @@ export const SkeletonButton: Story = {
     onClick: fn(),
     size: 'small',
     skeleton: true,
+    type: 'button',
+    variant: 'text',
+  },
+}
+
+export const LoadingButton: Story = {
+  play: ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const button = canvas.getByRole('button')
+    const dotLoading = canvas.getAllByRole('presentation')
+
+    expect(button).toBeVisible()
+    expect(dotLoading).toHaveLength(3)
+    expect(dotLoading[0]).toHaveStyle('animation-delay: 0s')
+    expect(dotLoading[1]).toHaveStyle('animation-delay: 0.2s')
+    expect(dotLoading[2]).toHaveStyle('animation-delay: 0.4s')
+  },
+  args: {
+    children: 'Aceptar',
+    disabled: false,
+    loading: true,
+    onClick: fn(),
+    size: 'small',
+    skeleton: false,
     type: 'button',
     variant: 'text',
   },

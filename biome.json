@@ -44,7 +44,7 @@
     "ignore": [
       "node_modules",
       "dist",
-      "*.stories.tsx",
+
       ".storybook",
       "vitest.config.*",
       "coverage"

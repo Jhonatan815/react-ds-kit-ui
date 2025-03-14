@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, styled } from 'styled-components'
 
 export default createGlobalStyle`
 	html, body, div, span, applet, object, iframe,
@@ -52,3 +52,23 @@ export default createGlobalStyle`
 		box-sizing: border-box;
 	}
 	`
+
+export const Container = styled.div`
+  align-items: center;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }): string => theme.spacing.s};
+  margin: 0 auto;
+  padding: ${({ theme }): string => theme.spacing.s};
+  width: 50%;
+`
+
+export const Title = styled.h1`
+  color: ${({ theme }): string => theme.colors.primary};
+  font-size: ${({ theme }): string => theme.spacing['2xl']};
+`
+export const Paragraph = styled.p`
+  color: ${({ theme }): string => theme.colors.secondary};
+  font-size: ${({ theme }): string => theme.spacing.m};
+`

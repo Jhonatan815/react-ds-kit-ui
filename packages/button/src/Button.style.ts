@@ -121,17 +121,17 @@ export const SkeletonButton = styled(Button)`
       background: linear-gradient(
         90deg,
         ${colorMix(
-          theme?.colors?.black ?? defaultTheme.colors.black,
-          theme?.colors?.white ?? defaultTheme.colors.white,
-          8
-        )}
+            theme?.colors?.black ?? defaultTheme.colors.black,
+            theme?.colors?.white ?? defaultTheme.colors.white,
+            8
+          )}
           25%,
         ${theme?.colors?.white ?? defaultTheme.colors.white} 50%,
         ${colorMix(
-          theme?.colors?.black ?? defaultTheme.colors.black,
-          theme?.colors?.white ?? defaultTheme.colors.white,
-          8
-        )}
+            theme?.colors?.black ?? defaultTheme.colors.black,
+            theme?.colors?.white ?? defaultTheme.colors.white,
+            8
+          )}
           75%
       );
     `}
@@ -150,22 +150,19 @@ export const DotLoading = styled.span<{ $isContained: boolean }>`
   ${({ $isContained, theme }): RuleSet<object> =>
     $isContained
       ? css`
-          background-color: ${
-            theme?.colors?.white ?? defaultTheme.colors.white
-          };
+          background-color: ${theme?.colors?.white ??
+          defaultTheme.colors.white};
         `
       : css`
-          background-color: ${
-            theme?.colors?.primary ?? defaultTheme.colors.primary
-          };
+          background-color: ${theme?.colors?.primary ??
+          defaultTheme.colors.primary};
         `}
-  width: 10px;
-  height: 10px;
-
-  margin-right: 0.5rem;
+  animation: ${dotFlashing} 1.5s infinite ease-in-out;
   border-radius: 50%;
   display: inline-block;
-  animation: ${dotFlashing} 1.5s infinite ease-in-out;
+  height: 10px;
+  margin-right: 0.5rem;
+  width: 10px;
   &:nth-child(1) {
     animation-delay: 0s;
   }

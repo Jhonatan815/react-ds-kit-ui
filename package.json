@@ -8,7 +8,6 @@
     "test:coverage": "vitest run --coverage",
     "test:storybook": "test-storybook",
     "build": "turbo run build",
-    "build:button": "turbo run build --filter=@react-web-kit/button",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "publish:button": "cd packages/button && rm -rf dist && pnpm build:turbo && npm publish --access public",
