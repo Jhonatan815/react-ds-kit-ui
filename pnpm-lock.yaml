@@ -16,7 +16,7 @@ importers:
         version: 4.3.4(vite@6.2.2)
       styled-components:
         specifier: ^6.1.15
-        version: 6.1.15(react-dom@19.0.0)(react@19.0.0)
+        version: 6.1.16(react-dom@19.0.0)(react@19.0.0)
       vite:
         specifier: ^6.2.0
         version: 6.2.2(@types/node@22.13.10)
@@ -41,7 +41,7 @@ importers:
         version: 1.0.5
       '@storybook/addon-essentials':
         specifier: ^8.6.4
-        version: 8.6.7(@types/react@19.0.10)(storybook@8.6.7)
+        version: 8.6.7(@types/react@19.0.11)(storybook@8.6.7)
       '@storybook/addon-links':
         specifier: ^8.6.4
         version: 8.6.7(react@19.0.0)(storybook@8.6.7)
@@ -95,7 +95,7 @@ importers:
     dependencies:
       '@react-web-kit/theme-provider':
         specifier: 1.0.2
-        version: link:../theme-provider
+        version: 1.0.2(@types/react@19.0.11)(react-dom@19.0.0)(react@19.0.0)
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -105,16 +105,16 @@ importers:
     devDependencies:
       '@types/react':
         specifier: ^19.0.10
-        version: 19.0.10
+        version: 19.0.11
       '@types/react-dom':
         specifier: ^19.0.4
-        version: 19.0.4(@types/react@19.0.10)
+        version: 19.0.4(@types/react@19.0.11)
       '@types/styled-components':
         specifier: ^5.1.34
         version: 5.1.34
       styled-components:
         specifier: ^6.1.15
-        version: 6.1.15(react-dom@19.0.0)(react@19.0.0)
+        version: 6.1.16(react-dom@19.0.0)(react@19.0.0)
       vite-plugin-dts:
         specifier: ^4.5.1
         version: 4.5.3(@types/node@22.13.10)(typescript@5.8.2)(vite@6.2.2)
@@ -127,19 +127,19 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      styled-components:
+        specifier: ^6.1.15
+        version: 6.1.16(react-dom@19.0.0)(react@19.0.0)
     devDependencies:
       '@types/react':
         specifier: ^19.0.10
-        version: 19.0.10
+        version: 19.0.11
       '@types/react-dom':
         specifier: ^19.0.4
-        version: 19.0.4(@types/react@19.0.10)
+        version: 19.0.4(@types/react@19.0.11)
       '@types/styled-components':
         specifier: ^5.1.34
         version: 5.1.34
-      styled-components:
-        specifier: ^6.1.15
-        version: 6.1.15(react-dom@19.0.0)(react@19.0.0)
       vite-plugin-dts:
         specifier: ^4.5.1
         version: 4.5.3(@types/node@22.13.10)(typescript@5.8.2)(vite@6.2.2)
@@ -875,14 +875,14 @@ packages:
       - supports-color
     dev: true
 
-  /@mdx-js/react@3.1.0(@types/react@19.0.10)(react@19.0.0):
+  /@mdx-js/react@3.1.0(@types/react@19.0.11)(react@19.0.0):
     resolution: {integrity: sha512-QjHtSaoameoalGnKDT3FoIl4+9RwyTmo9ZJGBdLOks/YOiWHoRDI3PUwEzOE7kEmGcV3AFcp9K6dYu9rEuKLAQ==}
     peerDependencies:
       '@types/react': '>=16'
       react: '>=16'
     dependencies:
       '@types/mdx': 2.0.13
-      '@types/react': 19.0.10
+      '@types/react': 19.0.11
       react: 19.0.0
     dev: true
 
@@ -963,6 +963,18 @@ packages:
   /@polka/url@1.0.0-next.28:
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
     dev: true
+
+  /@react-web-kit/theme-provider@1.0.2(@types/react@19.0.11)(react-dom@19.0.0)(react@19.0.0):
+    resolution: {integrity: sha512-kXe3VM1BtCGnY4wFn0BghZMb1ydBan86aSRrckk+tw1HwaXWYV3vzU6yqonQR6boI4vNtyXCpvbg00O/q+6BQg==}
+    peerDependencies:
+      '@types/react': ^19.0.0
+      react: ^19.0.0
+      react-dom: ^19.0.0
+    dependencies:
+      '@types/react': 19.0.11
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+    dev: false
 
   /@rollup/pluginutils@5.1.4:
     resolution: {integrity: sha512-USm05zrsFxYLPdWWq+K3STlWiT/3ELn3RcV5hJMghpeAIhxfsUIg6mt12CBJBInWMV4VneoV7SfGv8xIwo2qNQ==}
@@ -1206,12 +1218,12 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/addon-docs@8.6.7(@types/react@19.0.10)(storybook@8.6.7):
+  /@storybook/addon-docs@8.6.7(@types/react@19.0.11)(storybook@8.6.7):
     resolution: {integrity: sha512-kgNPEVuLGNJE8EdVQi5Tg2DYgR66/gut07jvhqnJfNqUkj6UpBHad0JR1uwrd7xS3kJs29Fs7UyU87RJnSlwcg==}
     peerDependencies:
       storybook: ^8.6.7
     dependencies:
-      '@mdx-js/react': 3.1.0(@types/react@19.0.10)(react@19.0.0)
+      '@mdx-js/react': 3.1.0(@types/react@19.0.11)(react@19.0.0)
       '@storybook/blocks': 8.6.7(react-dom@19.0.0)(react@19.0.0)(storybook@8.6.7)
       '@storybook/csf-plugin': 8.6.7(storybook@8.6.7)
       '@storybook/react-dom-shim': 8.6.7(react-dom@19.0.0)(react@19.0.0)(storybook@8.6.7)
@@ -1223,7 +1235,7 @@ packages:
       - '@types/react'
     dev: true
 
-  /@storybook/addon-essentials@8.6.7(@types/react@19.0.10)(storybook@8.6.7):
+  /@storybook/addon-essentials@8.6.7(@types/react@19.0.11)(storybook@8.6.7):
     resolution: {integrity: sha512-PFT62xuknk4wD1hTZEnYbGP1mJFPlhk7zVVlMjoldMUhmbHsFRhdWCpo93Vu9E3BWVxFxL3Jj+UwSwH4uVmekQ==}
     peerDependencies:
       storybook: ^8.6.7
@@ -1231,7 +1243,7 @@ packages:
       '@storybook/addon-actions': 8.6.7(storybook@8.6.7)
       '@storybook/addon-backgrounds': 8.6.7(storybook@8.6.7)
       '@storybook/addon-controls': 8.6.7(storybook@8.6.7)
-      '@storybook/addon-docs': 8.6.7(@types/react@19.0.10)(storybook@8.6.7)
+      '@storybook/addon-docs': 8.6.7(@types/react@19.0.11)(storybook@8.6.7)
       '@storybook/addon-highlight': 8.6.7(storybook@8.6.7)
       '@storybook/addon-measure': 8.6.7(storybook@8.6.7)
       '@storybook/addon-outline': 8.6.7(storybook@8.6.7)
@@ -1646,7 +1658,7 @@ packages:
   /@types/hoist-non-react-statics@3.3.6:
     resolution: {integrity: sha512-lPByRJUer/iN/xa4qpyL0qmL11DqNW81iU/IG1S3uvRUq4oKagz8VCxZjiWkumgt66YT3vOdDgZ0o32sGKtCEw==}
     dependencies:
-      '@types/react': 19.0.10
+      '@types/react': 19.0.11
       hoist-non-react-statics: 3.3.2
 
   /@types/istanbul-lib-coverage@2.0.6:
@@ -1666,16 +1678,16 @@ packages:
     dependencies:
       undici-types: 6.20.0
 
-  /@types/react-dom@19.0.4(@types/react@19.0.10):
+  /@types/react-dom@19.0.4(@types/react@19.0.11):
     resolution: {integrity: sha512-4fSQ8vWFkg+TGhePfUzVmat3eC14TXYSsiiDSLI0dVLsrm9gZFABjPy/Qu6TKgl1tq1Bu1yDsuQgY3A3DOjCcg==}
     peerDependencies:
       '@types/react': ^19.0.0
     dependencies:
-      '@types/react': 19.0.10
+      '@types/react': 19.0.11
     dev: true
 
-  /@types/react@19.0.10:
-    resolution: {integrity: sha512-JuRQ9KXLEjaUNjTWpzuR231Z2WpIwczOkBEIvbHNCzQefFIT0L8IqE6NV6ULLyC1SI/i234JnDoMkfg+RjQj2g==}
+  /@types/react@19.0.11:
+    resolution: {integrity: sha512-vrdxRZfo9ALXth6yPfV16PYTLZwsUWhVjjC+DkfE5t1suNSbBrWC9YqSuuxJZ8Ps6z1o2ycRpIqzZJIgklq4Tw==}
     dependencies:
       csstype: 3.1.3
 
@@ -1691,7 +1703,7 @@ packages:
     resolution: {integrity: sha512-mmiVvwpYklFIv9E8qfxuPyIt/OuyIrn6gMOAMOFUO3WJfSrSE+sGUoa4PiZj77Ut7bKZpaa6o1fBKS/4TOEvnA==}
     dependencies:
       '@types/hoist-non-react-statics': 3.3.6
-      '@types/react': 19.0.10
+      '@types/react': 19.0.11
       csstype: 3.1.3
 
   /@types/stylis@4.2.5:
@@ -2117,8 +2129,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001705
-      electron-to-chromium: 1.5.119
+      caniuse-lite: 1.0.30001706
+      electron-to-chromium: 1.5.120
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.24.4)
 
@@ -2161,8 +2173,8 @@ packages:
   /camelize@1.0.1:
     resolution: {integrity: sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==}
 
-  /caniuse-lite@1.0.30001705:
-    resolution: {integrity: sha512-S0uyMMiYvA7CxNgomYBwwwPUnWzFD83f3B1ce5jHUfHTH//QL6hHsreI8RVC5606R4ssqravelYO5TU6t8sEyg==}
+  /caniuse-lite@1.0.30001706:
+    resolution: {integrity: sha512-3ZczoTApMAZwPKYWmwVbQMFpXBDds3/0VciVoUwPUbldlYyVLmRVuRs/PcUZtHpbLRpzzDvrvnFuREsGt6lUug==}
 
   /chai@5.2.0:
     resolution: {integrity: sha512-mCuXncKXk5iCLhfhwTc0izo0gtEmpz5CtG2y8GiOINBlMVS6v8TMRc5TaLWKS6692m9+dVVfzgeVxR5UxWHTYw==}
@@ -2351,8 +2363,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium@1.5.119:
-    resolution: {integrity: sha512-Ku4NMzUjz3e3Vweh7PhApPrZSS4fyiCIbcIrG9eKrriYVLmbMepETR/v6SU7xPm98QTqMSYiCwfO89QNjXLkbQ==}
+  /electron-to-chromium@1.5.120:
+    resolution: {integrity: sha512-oTUp3gfX1gZI+xfD2djr2rzQdHCwHzPQrrK0CD7WpTdF0nPdQ/INcRVjWgLdCT4a9W3jFObR9DAfsuyFQnI8CQ==}
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -3649,8 +3661,8 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  /styled-components@6.1.15(react-dom@19.0.0)(react@19.0.0):
-    resolution: {integrity: sha512-PpOTEztW87Ua2xbmLa7yssjNyUF9vE7wdldRfn1I2E6RTkqknkBYpj771OxM/xrvRGinLy2oysa7GOd7NcZZIA==}
+  /styled-components@6.1.16(react-dom@19.0.0)(react@19.0.0):
+    resolution: {integrity: sha512-KpWB6ORAWGmbWM10cDJfEV6sXc/uVkkkQV3SLwTNQ/E/PqWgNHIoMSLh1Lnk2FkB9+JHK7uuMq1i+9ArxDD7iQ==}
     engines: {node: '>= 16'}
     peerDependencies:
       react: '>= 16.8.0'
