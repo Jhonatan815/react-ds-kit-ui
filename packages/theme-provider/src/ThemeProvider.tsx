@@ -5,8 +5,17 @@ import { defaultTheme } from './constants/themes'
 import type { PartialDefaultTheme } from './constants/themes'
 
 type ThemeProviderProps = {
+  /**
+   * Elements that will be wrapped inside the theme provider.
+   */
   children: React.ReactNode
+  /**
+   * Allows customization of the default theme.
+   */
   customTheme?: PartialDefaultTheme
+  /**
+   * Allows resetting of the global styles.
+   */
   resetGlobalStyles?: boolean
 }
 
