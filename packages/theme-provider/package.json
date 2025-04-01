@@ -1,7 +1,7 @@
 {
   "name": "@react-web-kit/theme-provider",
   "version": "1.0.5",
-  "description": "Paquete para estilos globales",
+  "description": "Package for global styles",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
