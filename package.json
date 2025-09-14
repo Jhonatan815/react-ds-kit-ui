@@ -1,19 +1,29 @@
 {
   "name": "react-ds-kit-ui",
   "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "dev:docs": "pnpm --filter docs dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "check-types": "turbo run check-types",
+    "clean:project": "rm -rf node_modules packages/*/dist apps/*/.next pnpm-lock.yaml",
+    "publish:ui": "pnpm run build --filter @react-web-kit/ui --force && cd packages/ui && npm publish --access public && cd ../.."
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
+    "@tailwindcss/postcss": "^4.1.13",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13",
     "turbo": "^2.5.6",
-    "typescript": "5.9.2"
+    "typescript": "^5.2.2"
   },
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@10.16.1",
   "engines": {
     "node": ">=18"
   }
