@@ -22,6 +22,7 @@
     "full:ui": "pnpm run clean:project && pnpm install && pnpm run build && pnpm run test:ui"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.1",
     "@changesets/cli": "^2.29.7",
     "@tailwindcss/postcss": "^4.1.13",
     "postcss": "^8.5.6",
