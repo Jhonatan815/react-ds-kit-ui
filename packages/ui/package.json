@@ -1,6 +1,6 @@
 {
   "name": "@react-web-kit/ui",
-  "version": "0.1.0",
+  "version": "0.1.14",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "style": "dist/index.css",
@@ -12,6 +12,11 @@
     },
     "./styles.css": "./dist/styles.css"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build:ts": "tsc --build",
     "build:css": "postcss src/index.css -o dist/styles.css",
@@ -48,5 +53,8 @@
     "storybook": "^9.1.5",
     "typescript": "^5.2.2",
     "vitest": "^3.2.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
