@@ -14,7 +14,10 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
     "clean:project": "rm -rf node_modules packages/*/dist apps/*/.next pnpm-lock.yaml",
-    "publish:ui": "pnpm run build --filter @react-web-kit/ui --force && cd packages/ui && npm publish --access public && cd ../.."
+    "publish:ui": "pnpm run build --filter @react-web-kit/ui --force && cd packages/ui && npm publish --access public && cd ../..",
+    "storybook:ui": "pnpm --filter @react-web-kit/ui storybook",
+    "test:ui": "pnpm --filter @react-web-kit/ui test",
+    "full:ui": "pnpm run clean:project && pnpm run install:all && pnpm run build:all && pnpm run test:ui"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.13",
