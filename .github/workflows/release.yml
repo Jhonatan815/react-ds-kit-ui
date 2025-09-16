@@ -6,8 +6,8 @@ on:
       - main
 
 permissions:
-  contents: write # para hacer commits y push
-  pull-requests: write # para abrir PRs
+  contents: write
+  pull-requests: write
 
 jobs:
   release:
@@ -31,23 +31,17 @@ jobs:
       - run: pnpm install
       - run: pnpm build
 
-      - name: Check pending changesets
-        id: changeset_status
+      - name: Version packages
         run: |
-          npx changeset status > changeset_output.txt
-          cat changeset_output.txt
-          if grep -q "No unreleased changesets" changeset_output.txt; then
-            echo "has_changesets=false" >> $GITHUB_OUTPUT
-          else
-            echo "has_changesets=true" >> $GITHUB_OUTPUT
-          fi
+          npx changeset version
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "chore: bump versions" || echo "No version changes to commit"
+          git push
 
-      - name: Run Changesets version and publish
-        uses: changesets/action@v1
-        with:
-          commit: 'chore: update versions'
-          title: 'chore: update versions'
-          publish: pnpm release
+      # 🚀 Publicar en npm
+      - name: Publish packages
+        run: npm run publish-packages
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
