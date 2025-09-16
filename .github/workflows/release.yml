@@ -27,6 +27,17 @@ jobs:
       - run: pnpm install
       - run: pnpm build
 
+      - name: Check pending changesets
+        id: changeset_status
+        run: |
+          npx changeset status > changeset_output.txt
+          cat changeset_output.txt
+          if grep -q "No unreleased changesets" changeset_output.txt; then
+            echo "has_changesets=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changesets=true" >> $GITHUB_OUTPUT
+          fi
+
       - name: Run Changesets version and publish
         uses: changesets/action@v1
         with:
