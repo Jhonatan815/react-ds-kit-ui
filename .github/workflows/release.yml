@@ -27,11 +27,16 @@ jobs:
       - run: pnpm install
       - run: pnpm build
 
-      - name: Publish to npm
-        id: changesets
+      - name: Version Packages and Generate Changelog
         uses: changesets/action@v1
         with:
-          publish: pnpm run release
+          version: true
+          createGithubReleases: true
+          commitMode: git-cli
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish Packages to NPM
+        run: pnpm changeset publish
+        env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
