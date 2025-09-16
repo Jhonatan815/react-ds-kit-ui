@@ -1,0 +1,19 @@
+# dependencias
+node_modules
+pnpm-lock.yaml
+
+# artefactos de compilación
+dist
+*.tsbuildinfo
+
+# caches de frameworks
+.next
+.turbo
+.vite
+.storybook
+
+# tests y coverage
+coverage
+
+# archivos específicos
+vitest.config.ts

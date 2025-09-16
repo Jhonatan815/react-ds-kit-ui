@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { Button } from './Button'
 import { vi } from 'vitest'
+import { Button } from './Button'
 
 test('renders the button with correct text', () => {
   render(<Button appName='TestApp'>Click me</Button>)
@@ -29,6 +29,6 @@ test('has the correct Tailwind classes', () => {
     'px-4',
     'py-2',
     'rounded',
-    'hover:bg-red-400'
+    'hover:bg-red-400',
   )
 })
