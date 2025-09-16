@@ -15,7 +15,7 @@
     "changeset": "pnpm changeset",
     "version:packages": "pnpm changeset version",
     "publish:packages": "pnpm changeset publish",
-    "release": "pnpm build && changeset version && changeset publish",
+    "release": "changeset version && changeset publish",
     "storybook:ui": "pnpm --filter @react-web-kit/ui storybook",
     "test:ui": "pnpm --filter @react-web-kit/ui test",
     "full:ui": "pnpm run clean:project && pnpm install && pnpm run build && pnpm run test:ui",
