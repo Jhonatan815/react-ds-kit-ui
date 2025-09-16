@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write # para hacer commits y push
+  pull-requests: write # para abrir PRs
+
 jobs:
   release:
     runs-on: ubuntu-latest
