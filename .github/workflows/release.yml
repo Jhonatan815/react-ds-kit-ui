@@ -30,7 +30,7 @@ jobs:
       - name: Publish packages via Changesets
         uses: changesets/action@v1
         with:
-          publish: pnpm run publish:packages
+          publish: pnpm changeset publish
           setupGitUser: true
           createGithubReleases: true
           commitMode: git-cli
