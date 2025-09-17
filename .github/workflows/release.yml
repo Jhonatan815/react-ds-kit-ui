@@ -41,8 +41,6 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: npm whoami
-
       - name: Publish to npm
         run: pnpm changeset publish
         env:
