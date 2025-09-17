@@ -34,15 +34,6 @@ jobs:
       - name: Build packages
         run: pnpm build
 
-      - name: Version packages and generate changelog
-        uses: changesets/action@v1
-        with:
-          version: true
-          createGithubReleases: true
-          commitMode: git-cli
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Authenticate with npm
         run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
         env:
