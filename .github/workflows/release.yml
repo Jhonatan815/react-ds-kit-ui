@@ -35,9 +35,13 @@ jobs:
         run: pnpm build
 
       - name: Authenticate with npm
-        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+        run: |
+          echo "@react-web-kit:registry=https://registry.npmjs.org/" > ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - run: npm whoami
 
       - name: Publish to npm
         run: pnpm changeset publish
