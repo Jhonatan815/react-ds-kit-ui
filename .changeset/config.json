@@ -1,9 +1,9 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config@2.3.1/schema.json",
-  "changelog": "@changesets/cli/changelog",
-  "commit": false,
-  "linked": [],
+  "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
+  "changelog": false,
+  "commit": true,
   "access": "public",
   "baseBranch": "main",
-  "updateInternalDependencies": "patch"
+  "updateInternalDependencies": "patch",
+  "ignore": ["docs", "@repo/typescript-config"]
 }
