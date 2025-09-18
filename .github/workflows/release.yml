@@ -66,6 +66,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Setup .npmrc for scoped package
+        run: |
+          echo "@react-web-kit:registry=https://registry.npmjs.org/" > ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Create Release PR or Publish
         uses: changesets/action@v1
         with:
