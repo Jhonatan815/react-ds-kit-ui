@@ -8,12 +8,14 @@ import hooks from 'eslint-plugin-react-hooks'
 import testingLibrary from 'eslint-plugin-testing-library'
 
 export default [
+  {
+    ignores: [
+      '**/dist/**', // Ignora cualquier carpeta dist en cualquier parte del proyecto
+    ],
+  },
   js.configs.recommended,
   {
     files: ['**/*.{ts,tsx,js,jsx}'],
-    ignores: [
-      'packages/ui/dist/**', // Ignora el dist de tu paquete ui
-    ],
     languageOptions: {
       parser: tsParser,
       sourceType: 'module',
