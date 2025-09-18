@@ -19,7 +19,7 @@
     "release": "changeset publish",
     "storybook:ui": "pnpm --filter @react-web-kit/ui storybook",
     "test:ui": "pnpm --filter @react-web-kit/ui test",
-    "publish:ui": "export NPM_TOKEN=tu_token_publish && pnpm changeset version && pnpm install && pnpm --filter @react-web-kit/ui run build && pnpm --filter @react-web-kit/ui run test && cd packages/ui && npm publish --access public && cd ../.."
+    "publish:ui": "pnpm changeset version && pnpm install && pnpm --filter @react-web-kit/ui run build && cd packages/ui && npm publish --access public && cd ../.."
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.1",

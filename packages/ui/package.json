@@ -5,6 +5,7 @@
   "types": "dist/index.d.ts",
   "style": "dist/index.css",
   "type": "module",
+  "private": false,
   "exports": {
     ".": {
       "import": "./dist/index.js",
