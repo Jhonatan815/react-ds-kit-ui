@@ -1,25 +1,48 @@
 {
   "name": "react-ds-kit-ui",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
+  "description": "Monorepo for the React DS Kit UI design system.",
+  "keywords": [
+    "react",
+    "design-system",
+    "ui",
+    "components",
+    "monorepo"
+  ],
+  "author": "Jhonatan Benavides",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jhonatan815/react-ds-kit-ui.git"
+  },
+  "homepage": "https://github.com/Jhonatan815/react-ds-kit-ui#readme",
+  "bugs": {
+    "url": "https://github.com/Jhonatan815/react-ds-kit-ui/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@10.17.0",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "check-types": "turbo run check-types",
-    "clean:project": "rm -rf node_modules packages/*/dist apps/*/.next pnpm-lock.yaml",
-    "dev:docs": "pnpm --filter docs dev",
     "dev": "turbo run dev",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,json,css}\"",
-    "full:ui": "pnpm run clean:project && pnpm install && pnpm run build && pnpm run test:ui",
-    "lint:fix": "pnpm lint --fix",
+    "dev:docs": "pnpm --filter docs dev",
+    "build": "turbo run build",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "release": "changeset publish",
-    "storybook:ui": "pnpm --filter @react-web-kit/ui storybook",
+    "lint:fix": "pnpm lint --fix",
+    "lint:ci": "pnpm lint --max-warnings=0",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,json,css}\"",
     "test:ui": "pnpm --filter @react-web-kit/ui test",
-    "publish:ui": "pnpm changeset version && pnpm install && pnpm --filter @react-web-kit/ui run build && cd packages/ui && npm publish --access public && cd ../.."
+    "storybook:ui": "pnpm --filter @react-web-kit/ui storybook",
+    "clean:project": "rm -rf node_modules packages/*/dist apps/*/.next pnpm-lock.yaml",
+    "publish:ui": "pnpm --filter @react-web-kit/ui publish --access public --no-git-checks",
+    "release": "changeset publish",
+    "check-types": "turbo run check-types",
+    "full:ui": "pnpm run clean:project && pnpm install && pnpm run build && pnpm run test:ui"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.1",
@@ -41,9 +64,5 @@
     "tailwindcss": "^4.1.13",
     "turbo": "^2.5.6",
     "typescript": "^5.2.2"
-  },
-  "packageManager": "pnpm@10.17.0",
-  "engines": {
-    "node": ">=18"
   }
 }

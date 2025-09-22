@@ -1,3 +1,15 @@
+# @react-web-kit/ui
+
+[![CI & Release](https://github.com/Jhonatan815/react-ds-kit-ui/actions/workflows/release.yml/badge.svg)](https://github.com/Jhonatan815/react-ds-kit-ui/actions/workflows/release.yml)
+[![npm version](https://img.shields.io/npm/v/@react-web-kit/ui.svg?color=blue)](https://www.npmjs.com/package/@react-web-kit/ui)
+[![npm downloads](https://img.shields.io/npm/dm/@react-web-kit/ui.svg)](https://www.npmjs.com/package/@react-web-kit/ui)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@react-web-kit/ui)](https://bundlephobia.com/package/@react-web-kit/ui)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+---
+
+Un set de componentes React para acelerar el desarrollo web moderno 🚀.
+
 # Turborepo starter
 
 This Turborepo starter is maintained by the Turborepo core team.

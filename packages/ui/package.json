@@ -1,11 +1,28 @@
 {
   "name": "@react-web-kit/ui",
   "version": "3.1.2",
+  "private": false,
+  "description": "🚀 Production-ready React components.",
+  "keywords": [
+    "react",
+    "ui",
+    "design-system",
+    "components"
+  ],
+  "author": "Jhonatan Benavides",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jhonatan815/react-ds-kit-ui.git"
+  },
+  "homepage": "https://github.com/Jhonatan815/react-ds-kit-ui#readme",
+  "bugs": {
+    "url": "https://github.com/Jhonatan815/react-ds-kit-ui/issues"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "style": "dist/index.css",
   "type": "module",
-  "private": false,
   "exports": {
     ".": {
       "import": "./dist/index.js",
