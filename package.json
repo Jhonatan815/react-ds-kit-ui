@@ -40,12 +40,14 @@
     "test:ui:coverage": "pnpm --filter @react-web-kit/ui test --coverage",
     "test:hooks": "pnpm --filter @react-web-kit/hooks test",
     "test:hooks:coverage": "pnpm --filter @react-web-kit/hooks test --coverage",
+    "test:commit": "pnpm test:ui:coverage && pnpm test:hooks:coverage",
     "storybook:ui": "pnpm --filter @react-web-kit/ui storybook",
     "clean:project": "rm -rf node_modules packages/*/dist packages/*/node_modules apps/*/.next pnpm-lock.yaml",
     "publish:ui": "pnpm --filter @react-web-kit/ui publish --access public --no-git-checks",
     "release": "changeset publish",
     "check-types": "turbo run check-types",
-    "full:ui": "pnpm run clean:project && pnpm install && pnpm run build && pnpm run test:ui"
+    "full:ui": "pnpm run clean:project && pnpm install && pnpm run build && pnpm run test:ui",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.1",
@@ -62,6 +64,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-testing-library": "^7.7.0",
+    "husky": "^9.1.7",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.13",
