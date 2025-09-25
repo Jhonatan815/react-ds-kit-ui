@@ -9,6 +9,7 @@
         ".next/**",
         "!.next/cache/**",
         "packages/ui/dist/**",
+        "packages/hooks/dist/**",
         "apps/docs/.next/**"
       ]
     },

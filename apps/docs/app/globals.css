@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @layer base {
   /* Estilos base personalizados */
@@ -10,4 +10,8 @@
 
 @layer utilities {
   /* Utilidades personalizadas */
+}
+
+:root {
+  --color-primary: yellow;
 }

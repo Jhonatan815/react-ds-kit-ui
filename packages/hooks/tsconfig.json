@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "src/",
+    "declaration": true,
+    "outDir": "dist",
+    "types": ["vitest", "@testing-library/jest-dom"]
+  },
+  "include": ["src/**/*", "vitest.setup.ts"]
+}

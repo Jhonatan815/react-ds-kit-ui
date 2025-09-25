@@ -23,7 +23,7 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@10.17.0",
+  "packageManager": "pnpm@10.17.1",
   "workspaces": [
     "apps/*",
     "packages/*"
@@ -37,8 +37,9 @@
     "lint:ci": "pnpm lint --max-warnings=0",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,json,css}\"",
     "test:ui": "pnpm --filter @react-web-kit/ui test",
+    "test:hooks": "pnpm --filter @react-web-kit/hooks test",
     "storybook:ui": "pnpm --filter @react-web-kit/ui storybook",
-    "clean:project": "rm -rf node_modules packages/*/dist apps/*/.next pnpm-lock.yaml",
+    "clean:project": "rm -rf node_modules packages/*/dist packages/*/node_modules apps/*/.next pnpm-lock.yaml",
     "publish:ui": "pnpm --filter @react-web-kit/ui publish --access public --no-git-checks",
     "release": "changeset publish",
     "check-types": "turbo run check-types",
