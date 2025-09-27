@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 export type Theme = 'light' | 'dark' | null
 
-export function useTheme() {
+export function useTheme(): { theme: Theme; toggleTheme: () => void } {
   const [theme, setTheme] = useState<Theme>(null)
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export function useTheme() {
     document.documentElement.classList.toggle('dark', initial === 'dark')
   }, [])
 
-  const toggleTheme = () => {
+  const toggleTheme = (): void => {
     const newTheme = theme === 'light' ? 'dark' : 'light'
     setTheme(newTheme)
     document.documentElement.classList.toggle('dark', newTheme === 'dark')

@@ -1,12 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Button, ButtonProps } from './Button'
+import { within } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { Button, type ButtonProps } from './Button'
 
 const meta: Meta<ButtonProps> = {
-  title: 'Components/Button', // <--- esto determina la ruta en Storybook
+  title: 'components/Button',
   component: Button,
 }
 export default meta
 
 type Story = StoryObj<ButtonProps>
 
-export const Primary: Story = { args: { children: 'Primary Button' } }
+export const Primary: Story = {
+  args: { children: <span>Primary Button</span> },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const button = canvas.getByRole('button', { name: 'Primary Button' })
+
+    await userEvent.click(button)
+  },
+}
