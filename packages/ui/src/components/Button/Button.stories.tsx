@@ -4,8 +4,8 @@ import userEvent from '@testing-library/user-event'
 import { Button, type ButtonProps } from './Button'
 
 const meta: Meta<ButtonProps> = {
-  title: 'components/Button',
   component: Button,
+  title: 'components/Button',
 }
 export default meta
 

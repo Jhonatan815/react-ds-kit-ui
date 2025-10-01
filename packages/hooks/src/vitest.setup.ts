@@ -1,10 +1,10 @@
 import { vi } from 'vitest'
 
 export const localStorageMock = {
-  getItem: vi.fn(),
-  setItem: vi.fn(),
-  removeItem: vi.fn(),
   clear: vi.fn(),
+  getItem: vi.fn(),
+  removeItem: vi.fn(),
+  setItem: vi.fn(),
 }
 Object.defineProperty(window, 'localStorage', {
   value: localStorageMock,

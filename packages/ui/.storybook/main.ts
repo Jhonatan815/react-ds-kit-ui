@@ -1,6 +1,7 @@
 import type { StorybookConfig } from '@storybook/react-vite'
-
+// eslint-disable-next-line import/order
 import { dirname, join } from 'path'
+
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -12,7 +13,6 @@ function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, 'package.json')))
 }
 const config: StorybookConfig = {
-  stories: ['../src/components/**/*.stories.@(ts|tsx|mdx)'],
   addons: [
     getAbsolutePath('@chromatic-com/storybook'),
     getAbsolutePath('@storybook/addon-docs'),
@@ -24,5 +24,6 @@ const config: StorybookConfig = {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
+  stories: ['../src/components/**/*.stories.@(ts|tsx|mdx)'],
 }
 export default config
