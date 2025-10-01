@@ -73,7 +73,9 @@ export default function Home(): JSX.Element | null {
             Read our docs
           </a>
         </div>
-        <Button appName='docs'>Open alert</Button>
+        <Button onClick={() => null} size='big' variant='contained'>
+          Open alert
+        </Button>
         <button
           className='px-4 py-2 rounded bg-primary text-white'
           onClick={toggleTheme}

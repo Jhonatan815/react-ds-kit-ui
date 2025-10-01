@@ -6,7 +6,11 @@ import { Button } from './Button'
 const onClick = vi.fn()
 
 const setupRender = () => {
-  render(<Button onClick={onClick}>Click me</Button>)
+  render(
+    <Button size='big' variant='contained' onClick={onClick}>
+      Click me
+    </Button>,
+  )
 }
 
 test('renders the button with correct text', () => {
