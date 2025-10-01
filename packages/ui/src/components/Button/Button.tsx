@@ -20,7 +20,7 @@ export const Button = ({
   if (variant === 'outline') {
     return (
       <button
-        className={`rounded px-4 ${currentSize[size]} bg-transparent border-1 border-gray-700 text-gray-700 hover:border-gray-400 hover:text-gray-400`}
+        className={`rounded px-4 ${currentSize[size]} bg-transparent border-1 border-gray-700 text-gray-700 hover:border-gray-400 hover:text-gray-600`}
         onClick={onClick}
         type='button'
       >
