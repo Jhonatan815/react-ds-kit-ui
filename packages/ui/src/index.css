@@ -2,10 +2,9 @@
 
 @theme {
   --color-primary: #008236;
-  --color-secondary: #364153;
+  --color-secondary: #f29d35;
 }
 
 .dark {
   --color-primary: violet;
-  --color-secondary: red;
 }

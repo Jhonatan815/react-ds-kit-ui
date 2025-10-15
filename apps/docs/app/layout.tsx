@@ -18,10 +18,16 @@ export const metadata: Metadata = {
   title: 'Create Next App',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}): JSX.Element {
   return (
     <html lang='en'>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {children}
+      </body>
     </html>
   )
 }

@@ -2,25 +2,9 @@
 
 import { useTheme } from '@react-web-kit/hooks'
 import { Button } from '@react-web-kit/ui'
-import Image, { type ImageProps } from 'next/image'
+import Image from 'next/image'
 import type { JSX } from 'react'
 import styles from './page.module.css'
-
-type Props = Omit<ImageProps, 'src'> & {
-  srcLight: string
-  srcDark: string
-}
-
-const ThemeImage = (props: Props): JSX.Element => {
-  const { srcLight, srcDark, alt } = props
-
-  return (
-    <>
-      <Image alt={alt} className='imgLight' src={srcLight} />
-      <Image alt={alt} className='imgDark' src={srcDark} />
-    </>
-  )
-}
 
 export default function Home(): JSX.Element | null {
   const { theme, toggleTheme } = useTheme()
@@ -32,15 +16,6 @@ export default function Home(): JSX.Element | null {
   return (
     <div className='bg-gray-400'>
       <main className={styles.main}>
-        <ThemeImage
-          alt='Turborepo logo'
-          className={styles.logo}
-          height={38}
-          priority
-          srcDark='turborepo-light.svg'
-          srcLight='turborepo-dark.svg'
-          width={180}
-        />
         <ol>
           <li>
             Get started by editing <code>apps/docs/app/page.tsx</code>
@@ -77,7 +52,7 @@ export default function Home(): JSX.Element | null {
           Open alert
         </Button>
         <button
-          className='px-4 py-2 rounded bg-primary text-white'
+          className='bg-primary rounded px-4 py-2 text-white'
           onClick={toggleTheme}
           type='button'
         >
@@ -90,7 +65,13 @@ export default function Home(): JSX.Element | null {
           rel='noopener noreferrer'
           target='_blank'
         >
-          <Image alt='Window icon' aria-hidden height={16} src='/window.svg' width={16} />
+          <Image
+            alt='Window icon'
+            aria-hidden
+            height={16}
+            src='/window.svg'
+            width={16}
+          />
           Examples
         </a>
         <a
@@ -98,7 +79,13 @@ export default function Home(): JSX.Element | null {
           rel='noopener noreferrer'
           target='_blank'
         >
-          <Image alt='Globe icon' aria-hidden height={16} src='/globe.svg' width={16} />
+          <Image
+            alt='Globe icon'
+            aria-hidden
+            height={16}
+            src='/globe.svg'
+            width={16}
+          />
           Go to turborepo.com →
         </a>
       </footer>

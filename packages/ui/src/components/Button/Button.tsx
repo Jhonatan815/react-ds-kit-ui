@@ -1,47 +1,41 @@
 'use client'
 
+import clsx from 'clsx'
 import type { JSX, ReactNode } from 'react'
 
 export interface ButtonProps {
   children: ReactNode
+  disabled?: boolean
   onClick: () => void
   size: 'small' | 'big'
-  variant: 'contained' | 'outline' | 'ghost'
+  variant: 'contained' | 'ghost' | 'outline'
 }
 
 export const Button = ({
   children,
+  disabled = false,
   onClick,
   size = 'big',
   variant = 'contained',
 }: ButtonProps): JSX.Element => {
-  const currentSize = { big: 'h-11', small: 'h-8' }
-
-  if (variant === 'outline') {
-    return (
-      <button
-        className={`rounded px-4 ${currentSize[size]} bg-transparent border-1 border-gray-700 text-gray-700 hover:border-gray-400 hover:text-gray-600`}
-        onClick={onClick}
-        type='button'
-      >
-        {children}
-      </button>
-    )
-  }
-  if (variant === 'ghost') {
-    return (
-      <button
-        className={`rounded px-4 ${currentSize[size]} hover:bg-primary/30`}
-        onClick={onClick}
-        type='button'
-      >
-        {children}
-      </button>
-    )
-  }
   return (
     <button
-      className={`rounded px-4 ${currentSize[size]} bg-primary text-white hover:bg-primary/80 border-0`}
+      className={clsx(
+        'outline-secondary cursor-pointer rounded px-4 disabled:cursor-not-allowed',
+        {
+          'h-11': size === 'big',
+          'h-8': size === 'small',
+        },
+        {
+          'bg-primary hover:bg-primary/80 text-white disabled:bg-gray-400 disabled:text-gray-200':
+            variant === 'contained',
+          'hover:bg-primary/80 text-primary border-primary border-1 bg-transparent hover:text-white disabled:border-gray-400 disabled:text-gray-400 disabled:hover:bg-gray-200':
+            variant === 'outline',
+          'text-primary hover:bg-primary/20 disabled:text-gray-400 disabled:hover:bg-gray-200':
+            variant === 'ghost',
+        },
+      )}
+      disabled={disabled}
       onClick={onClick}
       type='button'
     >

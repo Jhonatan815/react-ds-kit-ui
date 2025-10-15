@@ -11,7 +11,3 @@
 @layer utilities {
   /* Utilidades personalizadas */
 }
-
-:root {
-  --color-primary: yellow;
-}

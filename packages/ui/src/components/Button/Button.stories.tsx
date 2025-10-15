@@ -40,3 +40,17 @@ export const Ghost: Story = {
     await userEvent.click(button)
   },
 }
+
+export const Disabled: Story = {
+  args: {
+    children: <span>Disabled Button</span>,
+    disabled: true,
+    variant: 'outline',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const button = canvas.getByRole('button', { name: 'Disabled Button' })
+
+    await userEvent.click(button)
+  },
+}

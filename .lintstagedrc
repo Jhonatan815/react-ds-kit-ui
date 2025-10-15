@@ -1,12 +1,5 @@
 {
-  "*.{ts,tsx,js,jsx,json,css,md}": [
-    "pnpm format",
-    "pnpm lint"
-  ],
-  "packages/ui/**/*.{ts,tsx}": [
-    "bash -c 'pnpm test:ui:coverage'"
-  ],
-  "packages/hooks/**/*.{ts,tsx}": [
-    "bash -c 'pnpm test:hooks:coverage'"
-  ]
+  "*.{ts,tsx,js,jsx,json,css,md}": ["pnpm format", "pnpm lint"],
+  "packages/ui/**/*.{ts,tsx}": ["bash -c 'pnpm test:ui:coverage'"],
+  "packages/hooks/**/*.{ts,tsx}": ["bash -c 'pnpm test:hooks:coverage'"]
 }

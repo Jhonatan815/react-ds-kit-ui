@@ -1,7 +1,6 @@
 import js from '@eslint/js'
 import ts from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
-import prettierConfig from 'eslint-config-prettier'
 import importPlugin from 'eslint-plugin-import'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 import react from 'eslint-plugin-react'
@@ -25,7 +24,10 @@ const rules = {
     'error',
     { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
   ],
-  '@typescript-eslint/explicit-function-return-type': ['warn', { allowExpressions: true }],
+  '@typescript-eslint/explicit-function-return-type': [
+    'warn',
+    { allowExpressions: true },
+  ],
   '@typescript-eslint/consistent-type-imports': [
     'error',
     { prefer: 'type-imports', disallowTypeAnnotations: false },
@@ -51,8 +53,15 @@ const rules = {
   'jsx-a11y/no-static-element-interactions': 'error',
   'jsx-a11y/role-has-required-aria-props': 'error',
   'jsx-a11y/role-supports-aria-props': 'error',
-  'sort-keys': ['error', 'asc', { caseSensitive: true, natural: false, minKeys: 2 }],
-  'no-use-before-define': ['error', { functions: true, classes: true, variables: true }],
+  'sort-keys': [
+    'error',
+    'asc',
+    { caseSensitive: true, natural: false, minKeys: 2 },
+  ],
+  'no-use-before-define': [
+    'error',
+    { functions: true, classes: true, variables: true },
+  ],
   'import/prefer-default-export': 'off',
   'linebreak-style': ['error', 'unix'],
   'no-debugger': ['warn'],
@@ -67,7 +76,6 @@ const rules = {
       groups: ['builtin', 'external', 'internal'],
       'newlines-between': 'never',
       alphabetize: { order: 'asc', caseInsensitive: true },
-      pathGroups: [{ pattern: 'react', group: 'external', position: 'after' }],
       pathGroupsExcludedImportTypes: ['react'],
     },
   ],
@@ -79,7 +87,6 @@ const rules = {
   'react/no-danger': ['error'],
   'react/no-array-index-key': ['error'],
   'react/forbid-prop-types': ['error'],
-  'react/require-default-props': ['error'],
   'react/button-has-type': ['error'],
   'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
   'react/prop-types': 'warn',
@@ -213,5 +220,4 @@ export default [
       },
     },
   },
-  prettierConfig,
 ]
