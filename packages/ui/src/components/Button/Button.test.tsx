@@ -30,3 +30,19 @@ test('calls alert with the correct message when clicked', async () => {
 
   expect(onClick).toHaveBeenCalled()
 })
+
+test('adds a ripple span on click and calls remove after the animation duration', async () => {
+  const removeSpy = vi.spyOn(Element.prototype, 'remove')
+
+  setupRender()
+
+  const button = screen.getByRole('button', { name: 'Click me' })
+
+  await userEvent.click(button)
+  const ripple = button.querySelector('.ripple')
+
+  expect(ripple).toBeInTheDocument()
+  await userEvent.click(button)
+
+  expect(removeSpy).toHaveBeenCalled()
+})

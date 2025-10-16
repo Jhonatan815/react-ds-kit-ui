@@ -6,6 +6,7 @@ import jsxA11y from 'eslint-plugin-jsx-a11y'
 import react from 'eslint-plugin-react'
 import hooks from 'eslint-plugin-react-hooks'
 import testingLibrary from 'eslint-plugin-testing-library'
+import globals from 'globals'
 
 const rules = {
   'react/react-in-jsx-scope': 'off',
@@ -129,25 +130,9 @@ export default [
         },
       },
       globals: {
-        afterAll: 'readonly',
-        afterEach: 'readonly',
-        alert: 'readonly',
-        beforeAll: 'readonly',
-        beforeEach: 'readonly',
-        console: 'readonly',
-        describe: 'readonly',
-        document: 'readonly',
-        fetch: 'readonly',
-        history: 'readonly',
-        JSX: 'readonly',
-        localStorage: 'readonly',
-        location: 'readonly',
-        navigator: 'readonly',
         React: 'readonly',
-        sessionStorage: 'readonly',
-        URL: 'readonly',
-        URLSearchParams: 'readonly',
-        window: 'readonly',
+        ...globals.browser,
+        ...globals.es2021,
       },
     },
     plugins: {
@@ -177,24 +162,10 @@ export default [
         },
       },
       globals: {
-        afterAll: 'readonly',
-        afterEach: 'readonly',
-        beforeAll: 'readonly',
-        beforeEach: 'readonly',
-        console: 'readonly',
-        describe: 'readonly',
-        document: 'readonly',
-        expect: 'readonly',
-        it: 'readonly',
-        jest: 'readonly',
-        JSX: 'readonly',
-        localStorage: 'readonly',
-        navigator: 'readonly',
-        React: 'readonly',
-        test: 'readonly',
-        vi: 'readonly',
-        vitest: 'readonly',
-        window: 'readonly',
+        ...globals.browser,
+        ...globals.es2021,
+        ...globals.jest,
+        ...globals.vitest,
       },
     },
     plugins: {

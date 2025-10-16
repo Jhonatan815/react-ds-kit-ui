@@ -12,10 +12,10 @@ export default meta
 type Story = StoryObj<ButtonProps>
 
 export const Contained: Story = {
-  args: { children: <span>Contained Button</span> },
+  args: { children: <span>Contained Button Test</span> },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    const button = canvas.getByRole('button', { name: 'Contained Button' })
+    const button = canvas.getByRole('button', { name: 'Contained Button Test' })
 
     await userEvent.click(button)
   },
@@ -32,10 +32,15 @@ export const Outline: Story = {
 }
 
 export const Ghost: Story = {
-  args: { children: <span>Ghost Button</span>, variant: 'ghost' },
+  args: {
+    children: <span>Ghost Button text extra large</span>,
+    variant: 'ghost',
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    const button = canvas.getByRole('button', { name: 'Ghost Button' })
+    const button = canvas.getByRole('button', {
+      name: 'Ghost Button text extra large',
+    })
 
     await userEvent.click(button)
   },

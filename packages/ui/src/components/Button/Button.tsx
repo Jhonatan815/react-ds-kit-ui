@@ -18,10 +18,32 @@ export const Button = ({
   size = 'big',
   variant = 'contained',
 }: ButtonProps): JSX.Element => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault
+    const duration = 600
+    const button = e.currentTarget
+    const circle = document.createElement('span')
+    const diameter = Math.max(button.clientWidth, button.clientHeight) / 10
+    const radius = diameter / 2
+    circle.style.width = circle.style.height = `${diameter}px`
+    circle.style.left = `${e.clientX - button.offsetLeft - radius}px`
+    circle.style.top = `${e.clientY - button.offsetTop - radius}px`
+    circle.classList.add('ripple')
+    const existingRipple = button.querySelector('.ripple')
+
+    if (existingRipple) {
+      existingRipple.remove()
+    }
+
+    button.appendChild(circle)
+    setTimeout(() => circle.remove(), duration)
+    onClick()
+  }
+
   return (
     <button
       className={clsx(
-        'focus-visible:outline-secondary cursor-pointer rounded px-4 focus-visible:outline-2 disabled:cursor-not-allowed',
+        'focus-visible:outline-secondary relative w-full cursor-pointer overflow-hidden rounded px-4 focus-visible:outline-2 disabled:cursor-not-allowed',
         {
           'h-11': size === 'big',
           'h-8': size === 'small',
@@ -36,7 +58,7 @@ export const Button = ({
         },
       )}
       disabled={disabled}
-      onClick={onClick}
+      onClick={handleClick}
       type='button'
     >
       {children}

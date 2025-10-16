@@ -22,11 +22,11 @@ export default function Home(): JSX.Element | null {
       <Button onClick={toggleTheme} size='big' variant='contained'>
         Cambiar a {theme === 'light' ? 'dark' : 'light'}
       </Button>
-      <Button onClick={toggleTheme} size='big' variant='ghost'>
-        Cambiar a {theme === 'light' ? 'dark' : 'light'}
+      <Button size='big' variant='ghost'>
+        No actua
       </Button>
-      <Button onClick={toggleTheme} size='big' variant='outline'>
-        Cambiar a {theme === 'light' ? 'dark' : 'light'}
+      <Button size='big' variant='outline'>
+        No actua
       </Button>
     </div>
   )
