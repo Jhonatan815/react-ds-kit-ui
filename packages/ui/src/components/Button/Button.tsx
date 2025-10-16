@@ -6,7 +6,7 @@ import type { JSX, ReactNode } from 'react'
 export interface ButtonProps {
   children: ReactNode
   disabled?: boolean
-  onClick: () => void
+  onClick?: () => void
   size: 'small' | 'big'
   variant: 'contained' | 'ghost' | 'outline'
 }
@@ -14,14 +14,14 @@ export interface ButtonProps {
 export const Button = ({
   children,
   disabled = false,
-  onClick,
+  onClick = () => {},
   size = 'big',
   variant = 'contained',
 }: ButtonProps): JSX.Element => {
   return (
     <button
       className={clsx(
-        'outline-secondary cursor-pointer rounded px-4 disabled:cursor-not-allowed',
+        'focus-visible:outline-secondary cursor-pointer rounded px-4 focus-visible:outline-2 disabled:cursor-not-allowed',
         {
           'h-11': size === 'big',
           'h-8': size === 'small',
