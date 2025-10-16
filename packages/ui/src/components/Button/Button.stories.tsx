@@ -59,3 +59,33 @@ export const Disabled: Story = {
     await userEvent.click(button)
   },
 }
+
+export const Skelton: Story = {
+  args: {
+    children: <span>Skelton Button</span>,
+    skeleton: true,
+    variant: 'outline',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const button = canvas.getByRole('button', { name: 'Loading content' })
+
+    await userEvent.click(button)
+  },
+}
+
+export const Loading: Story = {
+  args: {
+    children: <span>Loading Button</span>,
+    isLodiang: true,
+    variant: 'contained',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const button = canvas.getByRole('button', {
+      name: 'Loading Button Cargando...',
+    })
+
+    await userEvent.click(button)
+  },
+}

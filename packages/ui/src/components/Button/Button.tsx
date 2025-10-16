@@ -6,16 +6,20 @@ import type { JSX, ReactNode } from 'react'
 export interface ButtonProps {
   children: ReactNode
   disabled?: boolean
+  isLodiang?: boolean
   onClick?: () => void
   size: 'small' | 'big'
+  skeleton?: boolean
   variant: 'contained' | 'ghost' | 'outline'
 }
 
 export const Button = ({
   children,
   disabled = false,
+  isLodiang = false,
   onClick = () => {},
   size = 'big',
+  skeleton = false,
   variant = 'contained',
 }: ButtonProps): JSX.Element => {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
@@ -40,14 +44,29 @@ export const Button = ({
     onClick()
   }
 
+  if (skeleton) {
+    return (
+      <button
+        aria-busy='true'
+        aria-label='Loading content'
+        className={clsx('w-full animate-pulse rounded bg-gray-300', {
+          'h-11': size === 'big',
+          'h-8': size === 'small',
+        })}
+        type='button'
+      />
+    )
+  }
+
   return (
     <button
       className={clsx(
-        'focus-visible:outline-secondary relative w-full cursor-pointer overflow-hidden rounded px-4 focus-visible:outline-2 disabled:cursor-not-allowed',
+        'focus-visible:outline-secondary relative flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded px-4 focus-visible:outline-2 disabled:cursor-not-allowed',
         {
           'h-11': size === 'big',
           'h-8': size === 'small',
         },
+        { 'cursor-wait': isLodiang },
         {
           'bg-primary hover:bg-primary/80 text-white disabled:bg-gray-400 disabled:text-gray-200':
             variant === 'contained',
@@ -62,6 +81,7 @@ export const Button = ({
       type='button'
     >
       {children}
+      {isLodiang && <span>Cargando...</span>}
     </button>
   )
 }
