@@ -6,5 +6,6 @@
 }
 
 .dark {
-  --color-primary: violet;
+  --color-secondary: #008236;
+  --color-primary: #f29d35;
 }
