@@ -1,17 +1,10 @@
+/* eslint-disable react/button-has-type */
 'use client'
 
 import clsx from 'clsx'
-import type { JSX, ReactNode } from 'react'
-
-export interface ButtonProps {
-  children: ReactNode
-  disabled?: boolean
-  isLodiang?: boolean
-  onClick?: () => void
-  size: 'small' | 'big'
-  skeleton?: boolean
-  variant: 'contained' | 'ghost' | 'outline'
-}
+import type { JSX } from 'react'
+import { Icon } from '../Icon'
+import type { ButtonProps } from './types'
 
 export const Button = ({
   children,
@@ -20,6 +13,7 @@ export const Button = ({
   onClick = () => {},
   size = 'big',
   skeleton = false,
+  type = 'button',
   variant = 'contained',
 }: ButtonProps): JSX.Element => {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
@@ -49,11 +43,14 @@ export const Button = ({
       <button
         aria-busy='true'
         aria-label='Loading content'
-        className={clsx('w-full animate-pulse rounded bg-gray-300', {
-          'h-11': size === 'big',
-          'h-8': size === 'small',
-        })}
-        type='button'
+        className={clsx(
+          'focus-visible:outline-secondary w-full animate-pulse rounded bg-gray-300 focus-visible:outline-2',
+          {
+            'h-11': size === 'big',
+            'h-8': size === 'small',
+          },
+        )}
+        type={type}
       />
     )
   }
@@ -78,10 +75,12 @@ export const Button = ({
       )}
       disabled={disabled}
       onClick={handleClick}
-      type='button'
+      type={type}
     >
       {children}
-      {isLodiang && <span>Cargando...</span>}
+      {isLodiang && (
+        <Icon className='animate-spin' height={24} icon='loading' width={24} />
+      )}
     </button>
   )
 }

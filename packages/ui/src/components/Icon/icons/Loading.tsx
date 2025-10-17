@@ -1,13 +1,15 @@
 import type { JSX } from 'react'
-import type { IconProps } from '../Icon'
+import type { IconProps } from '../types'
 
 const Loading = ({
+  className,
   height = 32,
   stroke = 'currentColor',
   title,
   width = 32,
 }: IconProps): JSX.Element => (
   <svg
+    className={className}
     fill='none'
     height={height}
     role='img'

@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { within } from '@testing-library/react'
 import { expect } from 'storybook/test'
-import { Icon, type IconSvg } from './Icon'
+import { Icon } from './Icon'
+import type { IconSvg } from './types'
 
 const meta: Meta<IconSvg> = {
   component: Icon,

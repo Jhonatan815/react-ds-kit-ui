@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { Button, type ButtonProps } from './Button'
+import { Button } from './Button'
+import type { ButtonProps } from './types'
 
 const meta: Meta<ButtonProps> = {
   component: Button,
@@ -83,7 +84,7 @@ export const Loading: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const button = canvas.getByRole('button', {
-      name: 'Loading Button Cargando...',
+      name: 'Loading Button loading',
     })
 
     await userEvent.click(button)
