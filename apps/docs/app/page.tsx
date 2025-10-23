@@ -19,7 +19,7 @@ export default function Home(): JSX.Element | null {
       )}
     >
       <Button onClick={toggleTheme} size='big' variant='contained'>
-        Cambiar a {theme === 'light' ? 'dark' : 'light'}
+        {`Cambiar a ${theme === 'light' ? 'dark' : 'light'}`}
       </Button>
       <Icon height={32} icon='loading' stroke='red' width={32} />
     </div>
