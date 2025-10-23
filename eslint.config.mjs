@@ -20,7 +20,6 @@ const rules = {
   'prefer-const': 'error',
   'no-var': 'error',
   'object-shorthand': 'error',
-  'no-unused-vars': 'off',
   '@typescript-eslint/no-unused-vars': [
     'error',
     { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
@@ -66,7 +65,10 @@ const rules = {
   'import/prefer-default-export': 'off',
   'linebreak-style': ['error', 'unix'],
   'no-debugger': ['warn'],
-  'no-unused-vars': ['warn'],
+  'no-unused-vars': [
+    'warn',
+    { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+  ],
   quotes: ['error', 'single'],
   semi: ['error', 'never'],
   'no-console': ['warn', { allow: ['error', 'info'] }],

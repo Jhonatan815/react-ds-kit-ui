@@ -1,10 +1,12 @@
-import type { ReactNode } from 'react'
-
 export interface ButtonProps {
+  /**
+   * Additional classes to apply to button
+   */
+  className?: string
   /**
    * Content of the button
    */
-  children: ReactNode
+  children: string
   /**
    * If true, the button will be disabled
    */
@@ -12,11 +14,11 @@ export interface ButtonProps {
   /**
    * If true, the button will be in a loading state
    */
-  isLodiang?: boolean
+  isLoading?: boolean
   /**
    * Function to be called when the button is clicked
    */
-  onClick?: () => void
+  onClick?: (_e: React.MouseEvent<HTMLButtonElement>) => void
   /**
    * Size of the button
    */
@@ -34,3 +36,8 @@ export interface ButtonProps {
    */
   variant: 'contained' | 'ghost' | 'outline'
 }
+
+export type ContainedProps = Omit<ButtonProps, 'variant' | 'skeleton' | 'size'>
+export type GhostProps = Omit<ButtonProps, 'variant' | 'skeleton' | 'size'>
+export type OutlineProps = Omit<ButtonProps, 'variant' | 'skeleton' | 'size'>
+export type SkeletonProps = Pick<ButtonProps, 'className'>

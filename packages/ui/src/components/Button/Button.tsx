@@ -1,31 +1,33 @@
-/* eslint-disable react/button-has-type */
 'use client'
 
 import clsx from 'clsx'
 import type { JSX } from 'react'
-import { Icon } from '../Icon'
+import Contained from './_components/Contained'
+import Ghost from './_components/Ghost'
+import Outline from './_components/Outline'
+import Skeleton from './_components/Skeleton'
 import type { ButtonProps } from './types'
 
 export const Button = ({
   children,
   disabled = false,
-  isLodiang = false,
+  isLoading: isLodiang = false,
   onClick = () => {},
   size = 'big',
   skeleton = false,
   type = 'button',
   variant = 'contained',
 }: ButtonProps): JSX.Element => {
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    e.preventDefault
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
+    event.preventDefault()
     const duration = 600
-    const button = e.currentTarget
+    const button = event.currentTarget
     const circle = document.createElement('span')
     const diameter = Math.max(button.clientWidth, button.clientHeight) / 10
     const radius = diameter / 2
     circle.style.width = circle.style.height = `${diameter}px`
-    circle.style.left = `${e.clientX - button.offsetLeft - radius}px`
-    circle.style.top = `${e.clientY - button.offsetTop - radius}px`
+    circle.style.left = `${event.clientX - button.offsetLeft - radius}px`
+    circle.style.top = `${event.clientY - button.offsetTop - radius}px`
     circle.classList.add('ripple')
     const existingRipple = button.querySelector('.ripple')
 
@@ -35,52 +37,58 @@ export const Button = ({
 
     button.appendChild(circle)
     setTimeout(() => circle.remove(), duration)
-    onClick()
+    onClick(event)
   }
 
+  const commonStyles = clsx(
+    {
+      'h-12': size === 'big',
+      'h-8': size === 'small',
+    },
+    { 'cursor-wait': isLodiang },
+  )
+
   if (skeleton) {
+    return <Skeleton className={commonStyles} />
+  }
+
+  if (variant === 'contained') {
     return (
-      <button
-        aria-busy='true'
-        aria-label='Loading content'
-        className={clsx(
-          'focus-visible:outline-secondary w-full animate-pulse rounded bg-gray-300 focus-visible:outline-2',
-          {
-            'h-11': size === 'big',
-            'h-8': size === 'small',
-          },
-        )}
+      <Contained
+        className={commonStyles}
+        disabled={disabled}
+        isLoading={isLodiang}
+        onClick={handleClick}
         type={type}
-      />
+      >
+        {children}
+      </Contained>
+    )
+  }
+
+  if (variant === 'ghost') {
+    return (
+      <Ghost
+        className={commonStyles}
+        disabled={disabled}
+        isLoading={isLodiang}
+        onClick={handleClick}
+        type={type}
+      >
+        {children}
+      </Ghost>
     )
   }
 
   return (
-    <button
-      className={clsx(
-        'focus-visible:outline-secondary relative flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded px-4 focus-visible:outline-2 disabled:cursor-not-allowed',
-        {
-          'h-11': size === 'big',
-          'h-8': size === 'small',
-        },
-        { 'cursor-wait': isLodiang },
-        {
-          'bg-primary hover:bg-primary/80 text-white disabled:bg-gray-400 disabled:text-gray-200':
-            variant === 'contained',
-          'hover:bg-primary/80 text-primary border-primary border-1 bg-transparent hover:text-white disabled:border-gray-400 disabled:text-gray-400 disabled:hover:bg-gray-200':
-            variant === 'outline',
-          'text-primary hover:bg-primary/20 disabled:text-gray-400 disabled:hover:bg-gray-200':
-            variant === 'ghost',
-        },
-      )}
+    <Outline
+      className={commonStyles}
       disabled={disabled}
+      isLoading={isLodiang}
       onClick={handleClick}
       type={type}
     >
       {children}
-      {isLodiang && (
-        <Icon className='animate-spin' height={24} icon='loading' width={24} />
-      )}
-    </button>
+    </Outline>
   )
 }

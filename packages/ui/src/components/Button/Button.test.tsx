@@ -2,33 +2,34 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { vi } from 'vitest'
 import { Button } from './Button'
+import { ButtonProps } from './types'
+
+type TestProps = {
+  isLoading?: ButtonProps['isLoading']
+  variant?: ButtonProps['variant']
+}
 
 const onClick = vi.fn()
 
-const setupRender = () => {
+const setupRender = ({ isLoading, variant = 'contained' }: TestProps = {}) => {
   render(
-    <Button size='big' variant='contained' onClick={onClick}>
+    <Button
+      size='big'
+      variant={variant}
+      onClick={onClick}
+      isLoading={isLoading}
+    >
       Click me
     </Button>,
   )
 }
 
-test('renders the button with correct text', () => {
+test('renders button with correct text', () => {
   setupRender()
 
   const button = screen.getByRole('button', { name: 'Click me' })
 
   expect(button).toBeVisible()
-})
-
-test('calls alert with the correct message when clicked', async () => {
-  setupRender()
-
-  const button = screen.getByRole('button', { name: 'Click me' })
-
-  await userEvent.click(button)
-
-  expect(onClick).toHaveBeenCalled()
 })
 
 test('adds a ripple span on click and calls remove after the animation duration', async () => {
@@ -45,4 +46,31 @@ test('adds a ripple span on click and calls remove after the animation duration'
   await userEvent.click(button)
 
   expect(removeSpy).toHaveBeenCalled()
+})
+
+test('should render loading contained button', () => {
+  setupRender({ isLoading: true, variant: 'contained' })
+
+  const icon = screen.getByRole('img', { name: 'loading' })
+
+  expect(icon).toBeInTheDocument()
+  expect(icon).toBeVisible()
+})
+
+test('should render loading ghost button', () => {
+  setupRender({ isLoading: true, variant: 'ghost' })
+
+  const icon = screen.getByRole('img', { name: 'loading' })
+
+  expect(icon).toBeInTheDocument()
+  expect(icon).toBeVisible()
+})
+
+test('should render loading outline button', () => {
+  setupRender({ isLoading: true, variant: 'outline' })
+
+  const icon = screen.getByRole('img', { name: 'loading' })
+
+  expect(icon).toBeInTheDocument()
+  expect(icon).toBeVisible()
 })

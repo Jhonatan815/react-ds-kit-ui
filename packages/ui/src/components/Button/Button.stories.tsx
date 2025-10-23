@@ -13,7 +13,10 @@ export default meta
 type Story = StoryObj<ButtonProps>
 
 export const Contained: Story = {
-  args: { children: <span>Contained Button Test</span> },
+  args: {
+    children: 'Contained Button Test',
+    variant: 'contained',
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const button = canvas.getByRole('button', { name: 'Contained Button Test' })
@@ -23,7 +26,7 @@ export const Contained: Story = {
 }
 
 export const Outline: Story = {
-  args: { children: <span>Outline Button</span>, variant: 'outline' },
+  args: { children: 'Outline Button', variant: 'outline' },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const button = canvas.getByRole('button', { name: 'Outline Button' })
@@ -34,7 +37,7 @@ export const Outline: Story = {
 
 export const Ghost: Story = {
   args: {
-    children: <span>Ghost Button text extra large</span>,
+    children: 'Ghost Button text extra large',
     variant: 'ghost',
   },
   play: async ({ canvasElement }) => {
@@ -49,7 +52,7 @@ export const Ghost: Story = {
 
 export const Disabled: Story = {
   args: {
-    children: <span>Disabled Button</span>,
+    children: 'Disabled Button',
     disabled: true,
     variant: 'outline',
   },
@@ -63,7 +66,7 @@ export const Disabled: Story = {
 
 export const Skelton: Story = {
   args: {
-    children: <span>Skelton Button</span>,
+    children: 'Skelton Button',
     skeleton: true,
     variant: 'outline',
   },
@@ -77,8 +80,8 @@ export const Skelton: Story = {
 
 export const Loading: Story = {
   args: {
-    children: <span>Loading Button</span>,
-    isLodiang: true,
+    children: 'Loading Button',
+    isLoading: true,
     variant: 'contained',
   },
   play: async ({ canvasElement }) => {
